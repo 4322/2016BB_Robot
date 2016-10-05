@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="FRC Deployment" default="deploy">
+
+  <!--
+  The following properties can be defined to override system level
+  settings. These should not be touched unless you know what you're
+  doing. The primary use is to override the wpilib version when
+  working with older robots that can't compile with the latest
+  libraries.
+  -->
+
+  <!-- By default the system version of WPI is used -->
+  <!-- <property name="version" value=""/> -->
+
+  <!-- By default the system team number is used -->
+  <!-- <property name="team-number" value=""/> -->
+
+  <!-- By default the target is set to 10.TE.AM.2 -->
+  <!-- <property name="target" value=""/> -->
+
+  <!-- Any other property in build.properties can also be overridden. -->
+  
+  <property file="${user.home}/wpilib/wpilib.properties"/>
+  <property file="build.properties"/>
+  <property file="${user.home}/wpilib/java/${version}/ant/build.properties"/>
+	<tstamp>
+		<format property="BUILDTIME" pattern="MM-dd-yyyy hh:mm:ss" locale="en,US"/>
+	</tstamp>
+   <target name="jar" depends="compile">
+   	<echo>[athena-jar] Auto-commiting.....</echo>
+		<exec executable="git">
+		  <arg value ="commit"/>
+		  <arg value="-a"/>
+		  <arg value="-m"/>
+		  <arg value = "Auto-commit from build at time: ${BUILDTIME}"/>
+		</exec>
+   	<echo>[athena-jar] Grabbing short hash for commit.</echo>
+   		<exec executable="git" outputproperty="COMMIT-ID">
+   		  <arg value ="rev-parse"/>
+   		  <arg value="--short"/>
+   		  <arg value="HEAD"/>
+   		</exec>
+	 <echo>[athena-jar] Making jar ${dist.jar}.</echo>
+	  <mkdir dir="${dist.dir}" />
+	  <mkdir dir="${build.jars}" />
+
+	  <echo>[athena-jar] Copying jars from ${classpath} to ${build.jars}.</echo>
+	  <copy todir="${build.jars}" flatten="true">
+	    <path>
+	    <pathelement path="${classpath}:${userLibs}"/>
+	    </path>
+	  </copy>
+
+    <jar destfile="${dist.jar}" update="false">
+      <manifest>
+    	<attribute name="Main-Class" value="edu.wpi.first.wpilibj.RobotBase"/>
+    	<attribute name="Robot-Class" value="${robot.class}"/>
+    	<attribute name="Class-Path" value="."/>
+      	<attribute name="Build-Time" value="${BUILDTIME}"/>
+      	<attribute name="Git-Commit" value="${COMMIT-ID}"/>
+      </manifest>
+
+      <fileset dir="${build.dir}" includes="**/*.class"/>
+
+    <zipgroupfileset dir="${build.jars}">
+      <include name="**/*.jar" />
+    </zipgroupfileset>
+    </jar>
+  </target>
+  <import file="${wpilib.ant.dir}/build.xml"/>
+
+</project> 
