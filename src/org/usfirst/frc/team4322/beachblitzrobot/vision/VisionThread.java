@@ -39,7 +39,7 @@ public class VisionThread extends Thread
     public static double vFOV = 2*Math.atan(Math.tan(Math.toRadians(78/2))*Math.sin(Math.atan(9./16.)));
     @DashboardInputField(field = "Camera Horizontal FOV: ")
     //logitech camera vFOV.
-    public static double hFOV = 2*Math.atan(Math.tan(Math.toRadians(78/2))*Math.cos(Math.atan(9./16.)));
+    public static double hFOV = 51.f;
 
     Image frame = imaqCreateImage(ImageType.IMAGE_RGB, 0);
     Image binarizedFrame = imaqCreateImage(ImageType.IMAGE_U8, 0);
