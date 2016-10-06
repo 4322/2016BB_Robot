@@ -19,7 +19,8 @@ public class Collector extends Subsystem {
     private DoubleSolenoid collectorPistons;
     private Talon collectorTalon;
     private DigitalInput ballSwitch;
-            
+    private boolean intenabled = false; 
+    
     private static class BallInterruptHandler extends InterruptHandlerFunction<Object>
     {
 
@@ -28,6 +29,7 @@ public class Collector extends Subsystem {
         {
             Robot.collector.collectorTalon.set(0);
             Robot.collector.ballSwitch.disableInterrupts();
+            Robot.collector.intenabled =false;
             Robot.driveBase.swapForward();
             Robot.collector.retractArm();
             Robot.collector.collectorStop();
@@ -53,8 +55,11 @@ public class Collector extends Subsystem {
     public void extendArm()
     {
         collectorPistons.set(Value.kForward);
-        Robot.collector.ballSwitch.disableInterrupts();
-        Robot.collector.ballSwitch.enableInterrupts();
+        if(!intenabled)
+        {
+            Robot.collector.ballSwitch.enableInterrupts();
+            intenabled=false;
+        }
     }
     
     public void retractArm()
