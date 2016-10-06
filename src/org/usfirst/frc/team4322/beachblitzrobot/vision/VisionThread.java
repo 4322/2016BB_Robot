@@ -167,7 +167,9 @@ public class VisionThread extends Thread
                     RobotLogger.getInstance().log("XPOS-REL: %f YPOS-REL: %f\n",
                             in.relxpos, in.relypos);
                     RobotLogger.getInstance().log("DISTANCE: %f\n", in.distance);
-                    SmartDashboard.putNumber("TARGET DISTANCE: ", in.distance);
+                    SmartDashboard.putNumber("TARGET DISTANCE (ft): ", in.distance);
+                    SmartDashboard.putNumber("TARGET DISTANCE (in): ", in.distance*12);
+
                 }
                 if (!(objects.size() == 0))
                 {
