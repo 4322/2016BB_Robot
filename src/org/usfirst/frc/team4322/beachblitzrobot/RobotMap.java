@@ -32,8 +32,8 @@ public class RobotMap
      * Collector
      */
     public static int COLLECTOR_ARM_TALONSR_ID = 0;
-    public static int COLLECTOR_ARM_DOUBLESOLENOID_LEFT_PORT = 7;
-    public static int COLLECTOR_ARM_DOUBLESOLENOID_RIGHT_PORT = 8;
+    public static int COLLECTOR_ARM_DOUBLESOLENOID_LEFT_PORT = 6;
+    public static int COLLECTOR_ARM_DOUBLESOLENOID_RIGHT_PORT = 7;
     public static int COLLECTOR_BALL_SWITCH_DIO_PORT = 0;
     
     /**
