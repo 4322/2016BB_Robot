@@ -162,8 +162,7 @@ public class VisionThread extends Thread
                             in.hu6);
                     RobotLogger.getInstance().log("XPOS: %f YPOS: %f\n",
                             in.xpos, in.ypos);
-                    RobotLogger.getInstance().log("XPOS-REL: %f YPOS-REL: %"
-                            + "\n",
+                    RobotLogger.getInstance().log("XPOS-REL: %f YPOS-REL: %f\n",
                             in.relxpos, in.relypos);
                     RobotLogger.getInstance().log("DISTANCE: %f\n", in.distance);
                 }
