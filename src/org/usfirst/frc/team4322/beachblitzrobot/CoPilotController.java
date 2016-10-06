@@ -11,7 +11,7 @@ public class CoPilotController
     
     private CoPilotController()
     {
-        controller = new XboxController(0);
+        controller = new XboxController(1);
     }
     
     public static CoPilotController getInstance()
