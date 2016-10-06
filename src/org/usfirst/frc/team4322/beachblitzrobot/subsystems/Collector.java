@@ -74,12 +74,12 @@ public class Collector extends Subsystem {
     
     public void collectorForward()
     {
-        collectorTalon.set(1);
+        collectorTalon.set(-1);
     }
     
     public void collectorBackward()
     {
-        collectorTalon.set(-1);
+        collectorTalon.set(1);
     }
     
     public void initDefaultCommand() {
