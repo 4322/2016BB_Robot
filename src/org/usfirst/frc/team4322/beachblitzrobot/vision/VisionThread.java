@@ -9,6 +9,8 @@ import com.ni.vision.*;
 import com.ni.vision.NIVision.GetImageSizeResult;
 
 import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import static com.ni.vision.NIVision.*;
 
 public class VisionThread extends Thread
@@ -165,6 +167,7 @@ public class VisionThread extends Thread
                     RobotLogger.getInstance().log("XPOS-REL: %f YPOS-REL: %f\n",
                             in.relxpos, in.relypos);
                     RobotLogger.getInstance().log("DISTANCE: %f\n", in.distance);
+                    SmartDashboard.putNumber("TARGET DISTANCE: ", in.distance);
                 }
                 if (!(objects.size() == 0))
                 {
