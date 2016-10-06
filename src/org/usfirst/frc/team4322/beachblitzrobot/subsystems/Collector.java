@@ -53,6 +53,7 @@ public class Collector extends Subsystem {
     public void extendArm()
     {
         collectorPistons.set(Value.kForward);
+        Robot.collector.ballSwitch.disableInterrupts();
         Robot.collector.ballSwitch.enableInterrupts();
     }
     

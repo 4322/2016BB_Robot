@@ -2,6 +2,7 @@
 package org.usfirst.frc.team4322.beachblitzrobot.subsystems;
 
 import org.usfirst.frc.team4322.beachblitzrobot.RobotMap;
+import org.usfirst.frc.team4322.beachblitzrobot.commands.DriveBase_ArcadeDrive;
 
 import com.kauailabs.navx.frc.AHRS;
 
@@ -10,6 +11,7 @@ import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.RobotDrive.MotorType;
 import edu.wpi.first.wpilibj.SPI;
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -101,8 +103,15 @@ public class DriveBase extends Subsystem
     }
     
     @Override
+    protected Command getDefaultCommand()
+    {
+        // TODO Auto-generated method stub
+        return new DriveBase_ArcadeDrive();
+    }
+
+    @Override
     protected void initDefaultCommand()
     {
-
+           
     }
 }
