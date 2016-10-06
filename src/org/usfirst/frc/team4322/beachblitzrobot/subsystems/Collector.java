@@ -2,6 +2,7 @@ package org.usfirst.frc.team4322.beachblitzrobot.subsystems;
 
 import org.usfirst.frc.team4322.beachblitzrobot.Robot;
 import org.usfirst.frc.team4322.beachblitzrobot.RobotMap;
+import org.usfirst.frc.team4322.beachblitzrobot.commands.Collector_Stop;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
@@ -30,6 +31,7 @@ public class Collector extends Subsystem {
             Robot.driveBase.swapForward();
             Robot.collector.retractArm();
             Robot.collector.collectorStop();
+            new Collector_Stop().start();
         }
         
     }
