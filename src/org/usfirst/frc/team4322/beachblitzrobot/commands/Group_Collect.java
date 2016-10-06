@@ -6,7 +6,7 @@ public class Group_Collect extends CommandGroup
 {
     public Group_Collect()
     {
-        addParallel(new Collector_Collect());
+        addSequential(new Collector_Collect());
         addSequential(new Collector_Lower());
         addSequential(new DriveBase_SwapForward());
     }
