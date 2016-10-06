@@ -138,7 +138,7 @@ public class VisionThread extends Thread
                     vr.score = (vr.aspectScore + vr.areaScore) / 2;
                     vr.relxpos = vr.xpos / size.width;
                     vr.relypos = vr.ypos / size.height;
-                    vr.distance = 1.75/(12.0*((double)vr.bboxwidth/(double)size.width)*Math.tan((hFOV/2.0)*Math.PI/(180*2)));
+                    vr.distance = 1.75/(12.0*((double)vr.bboxwidth/(double)size.width)*Math.tan(hFOV/2.0));
                     if (Math.abs(vr.hu1 - targetHU1) < .2)
                     {
                         RobotLogger.getInstance()
