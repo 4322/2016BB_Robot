@@ -32,6 +32,13 @@ public class VisionThread extends Thread
     public static int bMin = 0;
     @DashboardInputField(field = "Blue Max Value: ")
     public static int bMax = 255;
+    @DashboardInputField(field = "Camera Vertical FOV: ")
+    //logitech camera vFOV.
+    public static double vFOV = 2*Math.atan(Math.tan(Math.toRadians(78/2))*Math.sin(Math.atan(9./16.)));
+    @DashboardInputField(field = "Camera Horizontal FOV: ")
+    //logitech camera vFOV.
+    public static double hFOV = 2*Math.atan(Math.tan(Math.toRadians(78/2))*Math.cos(Math.atan(9./16.)));
+
     Image frame = imaqCreateImage(ImageType.IMAGE_RGB, 0);
     Image binarizedFrame = imaqCreateImage(ImageType.IMAGE_U8, 0);
     Image display = imaqCreateImage(ImageType.IMAGE_RGB, 0);
@@ -91,6 +98,7 @@ public class VisionThread extends Thread
                 for (int i = 0; i < numParticles; i++)
                 {
                     VisionReport vr = new VisionReport();
+                      
                     vr.area = imaqMeasureParticle(binarizedFrame, i, 0,
                             MeasurementType.MT_AREA);
                     vr.bboxwidth = imaqMeasureParticle(binarizedFrame, i, 0,
@@ -128,6 +136,7 @@ public class VisionThread extends Thread
                     vr.score = (vr.aspectScore + vr.areaScore) / 2;
                     vr.relxpos = vr.xpos / size.width;
                     vr.relypos = vr.ypos / size.height;
+                    vr.distance = 20.0/(2*(vr.bboxwidth/size.width)*Math.tan(hFOV*Math.PI/(180*2)));
                     if (Math.abs(vr.hu1 - targetHU1) < .2)
                     {
                         RobotLogger.getInstance()
@@ -153,8 +162,10 @@ public class VisionThread extends Thread
                             in.hu6);
                     RobotLogger.getInstance().log("XPOS: %f YPOS: %f\n",
                             in.xpos, in.ypos);
-                    RobotLogger.getInstance().log("XPOS-REL: %f YPOS-REL: %f\n",
+                    RobotLogger.getInstance().log("XPOS-REL: %f YPOS-REL: %"
+                            + "\n",
                             in.relxpos, in.relypos);
+                    RobotLogger.getInstance().log("DISTANCE: %f\n", in.distance);
                 }
                 if (!(objects.size() == 0))
                 {

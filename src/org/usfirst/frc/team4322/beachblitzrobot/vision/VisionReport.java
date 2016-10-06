@@ -13,5 +13,6 @@ public class VisionReport
     public double score;
     public double xpos,ypos;
     public double relxpos,relypos;
+    public double distance;
     public long time;
 }

@@ -20,10 +20,10 @@
   <!-- <property name="target" value=""/> -->
 
   <!-- Any other property in build.properties can also be overridden. -->
-  
-  <property file="${user.home}/wpilib/wpilib.properties"/>
   <property file="build.properties"/>
+  <property file="${user.home}/wpilib/wpilib.properties"/>
   <property file="${user.home}/wpilib/java/${version}/ant/build.properties"/>
+	<property name="userLibs" value="${user.home}/4322Utils.jar"/>
 	<tstamp>
 		<format property="BUILDTIME" pattern="MM-dd-yyyy hh:mm:ss" locale="en,US"/>
 	</tstamp>
