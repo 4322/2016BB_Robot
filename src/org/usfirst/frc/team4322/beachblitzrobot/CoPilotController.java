@@ -25,7 +25,17 @@ public class CoPilotController
     
     public Button getShootButton()
     {
+        return controller.lt;
+    }
+    
+    public Button getHoodUpButton()
+    {
         return controller.rb;
+    }
+    
+    public Button getHoodDownButton()
+    {
+        return controller.lb;
     }
 
 }

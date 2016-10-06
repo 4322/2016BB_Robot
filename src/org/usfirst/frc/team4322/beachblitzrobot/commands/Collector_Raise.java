@@ -26,7 +26,6 @@ public class Collector_Raise extends Command
     @Override
     protected boolean isFinished()
     {
-        // TODO Auto-generated method stub
         return true;
     }
 
@@ -39,7 +38,6 @@ public class Collector_Raise extends Command
     @Override
     protected void interrupted()
     {
-        // TODO Auto-generated method stub
 
     }
 

@@ -26,15 +26,12 @@ public class Feeder_LoadShooter extends Command
     @Override
     protected boolean isFinished()
     {
-        // TODO Auto-generated method stub
-        return true;
+        return false;
     }
 
     @Override
     protected void end()
     {
-        // TODO Auto-generated method stub
-        Robot.feeder.set(0);
     }
 
     @Override

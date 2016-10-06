@@ -11,5 +11,7 @@ public class OI
     {
         PilotController.getInstance().getCollectButton().whenPressed(new Group_Collect());
         CoPilotController.getInstance().getShootButton().whenPressed(new Group_Shoot());
+        CoPilotController.getInstance().getHoodDownButton().whenPressed(new Shooter_LowerHood());        
+        CoPilotController.getInstance().getHoodUpButton().whenPressed(new Shooter_RaiseHood());
     }
 }

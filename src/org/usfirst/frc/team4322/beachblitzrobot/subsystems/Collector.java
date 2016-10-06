@@ -29,6 +29,7 @@ public class Collector extends Subsystem {
             Robot.collector.ballSwitch.disableInterrupts();
             Robot.driveBase.swapForward();
             Robot.collector.retractArm();
+            Robot.collector.collectorStop();
         }
         
     }

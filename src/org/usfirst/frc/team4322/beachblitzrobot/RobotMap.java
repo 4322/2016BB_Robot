@@ -32,8 +32,8 @@ public class RobotMap
      * Collector
      */
     public static int COLLECTOR_ARM_TALONSR_ID = 0;
-    public static int COLLECTOR_ARM_DOUBLESOLENOID_LEFT_PORT = 0;
-    public static int COLLECTOR_ARM_DOUBLESOLENOID_RIGHT_PORT = 1;
+    public static int COLLECTOR_ARM_DOUBLESOLENOID_LEFT_PORT = 7;
+    public static int COLLECTOR_ARM_DOUBLESOLENOID_RIGHT_PORT = 8;
     public static int COLLECTOR_BALL_SWITCH_DIO_PORT = 0;
     
     /**
@@ -57,6 +57,8 @@ public class RobotMap
      */
     public static int SHOOTER_FLYWHEEL_LEFT_TALONSRX_ID = 20;
     public static int SHOOTER_FLYWHEEL_RIGHT_TALONSRX_ID = 21;
+    public static int SHOOTER_HOOD_PISTON_LEFT_SOLENOID_PORT = 5;
+    public static int SHOOTER_HOOD_PISTON_RIGHT_SOLENOID_PORT = 6;
     public static int SHOOTER_FLYWHEEL_RPM = 0;
     public static int SHOOTER_STABILIZATION_TIMEOUT = 1;
     public static int SHOOTER_STABLE_THRESHOLD = 5;

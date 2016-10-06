@@ -4,23 +4,23 @@ import org.usfirst.frc.team4322.beachblitzrobot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class Collector_Lower extends Command
+public class Shooter_RaiseHood extends Command
 {
-
-    public Collector_Lower()
+    public Shooter_RaiseHood()
     {
-        requires(Robot.collector);
+        requires(Robot.shooter);
     }
+    
     @Override
     protected void initialize()
     {
-         
+        
     }
 
     @Override
     protected void execute()
     {
-        Robot.collector.extendArm();
+        Robot.shooter.raiseHood();
     }
 
     @Override
@@ -32,13 +32,13 @@ public class Collector_Lower extends Command
     @Override
     protected void end()
     {
-
+        
     }
 
     @Override
     protected void interrupted()
     {
-
+        
     }
 
 }

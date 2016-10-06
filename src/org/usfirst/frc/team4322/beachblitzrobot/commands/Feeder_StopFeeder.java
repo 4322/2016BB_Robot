@@ -4,23 +4,24 @@ import org.usfirst.frc.team4322.beachblitzrobot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class Collector_Lower extends Command
+public class Feeder_StopFeeder extends Command
 {
 
-    public Collector_Lower()
+    public Feeder_StopFeeder()
     {
-        requires(Robot.collector);
+        requires(Robot.feeder);
     }
+    
     @Override
     protected void initialize()
     {
-         
+
     }
 
     @Override
     protected void execute()
     {
-        Robot.collector.extendArm();
+        Robot.feeder.set(0);
     }
 
     @Override
