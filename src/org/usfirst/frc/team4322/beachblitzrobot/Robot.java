@@ -38,13 +38,13 @@ public class Robot extends IterativeRobot
         RobotLogger.getInstance().update(false);
         MapSynchronizer.getInstance().link(RobotMap.class);
         MapSynchronizer.getInstance().link(VisionThread.class);
-        oi = new OI();
         collector = new Collector();
         driveBase = new DriveBase();
         feeder = new Feeder();
         shooter = new Shooter();
         turret = new Turret();
         vision = new Vision();
+        oi = new OI();
         new Compressor().setClosedLoopControl(true);
     }
 
