@@ -42,5 +42,9 @@ public class CoPilotController
     {
         return controller.leftStick.getX();
     }
-
+    
+    public Button getStopShooter()
+    {
+        return controller.start;
+    }
 }
