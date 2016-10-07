@@ -10,7 +10,7 @@ public class OI
     public OI()
     {
         PilotController.getInstance().getCollectButton().whenPressed(new Group_Collect());
-        PilotController.getInstance().getRaiseButton().whenPressed(new Collector_Raise());
+        PilotController.getInstance().getRaiseButton().whenPressed(new Group_StopCollector());
         PilotController.getInstance().getChevalButton().whenPressed(new Collector_Lower());
         PilotController.getInstance().getChevalButton().whenReleased(new Collector_Raise());
         PilotController.getInstance().getLowGoalButton().whileHeld(new Feeder_Eject());
