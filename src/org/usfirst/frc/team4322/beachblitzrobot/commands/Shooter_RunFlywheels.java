@@ -7,7 +7,6 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class Shooter_RunFlywheels extends Command
 {
-    private int stablecount;
     public Shooter_RunFlywheels()
     {
         requires(Robot.shooter);
