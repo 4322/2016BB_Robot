@@ -24,19 +24,17 @@ public class Shooter_RunFlywheels extends Command
     protected void execute()
     {
         Robot.shooter.set(RobotMap.SHOOTER_FLYWHEEL_RPM);
-        stablecount++;
     }
 
     @Override
     protected boolean isFinished()
     {
-        return true;
+        return false;
     }
 
     @Override
     protected void end()
     {
-        Robot.shooter.set(RobotMap.SHOOTER_FLYWHEEL_RPM);
     }
     
     @Override
