@@ -13,7 +13,8 @@ public class OI
         PilotController.getInstance().getRaiseButton().whenPressed(new Group_StopCollector());
         PilotController.getInstance().getChevalButton().whenPressed(new Collector_Lower());
         PilotController.getInstance().getChevalButton().whenReleased(new Collector_Raise());
-        PilotController.getInstance().getLowGoalButton().whileHeld(new Feeder_Eject());
+        PilotController.getInstance().getLowGoalButton().whenPressed(new Feeder_Eject());
+        PilotController.getInstance().getLowGoalButton().whenReleased(new Feeder_StopFeeder());
         PilotController.getInstance().getForwardButton().whenPressed(new DriveBase_SetOrientation(true));
         PilotController.getInstance().getReverseButton().whenPressed(new DriveBase_SetOrientation(false));
         CoPilotController.getInstance().getShootButton().whileHeld(new Group_Shoot());
