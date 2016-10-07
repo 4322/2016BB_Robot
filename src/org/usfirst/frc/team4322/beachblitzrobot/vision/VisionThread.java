@@ -142,6 +142,10 @@ public class VisionThread extends Thread
                     {
                         vr.score += 10;
                     }
+                    else
+                    {
+                        continue;
+                    }
                     out = vr;
                     Rect rec = new NIVision.Rect((int) out.bboxtop + 1,
                             (int) out.bboxleft - 1, (int) out.bboxheight + 2,
