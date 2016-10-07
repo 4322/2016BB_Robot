@@ -68,7 +68,11 @@ public class DriveBase extends Subsystem
     
     public void drive(double moveValue, double rotateValue, double powerLimit)
     {
-        robotDrive.arcadeDrive(moveValue * powerLimit, -rotateValue * powerLimit);
+        if(reversed)
+            robotDrive.arcadeDrive(moveValue * powerLimit, rotateValue * powerLimit);
+        else
+            robotDrive.arcadeDrive(moveValue * powerLimit, -rotateValue * powerLimit);
+
     }
 
     public void navxDrive(double moveValue, double rotateValue)

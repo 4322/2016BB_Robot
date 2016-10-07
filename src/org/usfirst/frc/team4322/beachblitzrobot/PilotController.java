@@ -39,4 +39,19 @@ public class PilotController
     {
         return controller.lb;
     }
+    
+    public Button getRaiseButton()
+    {
+        return controller.rb;
+    }
+    
+    public Button getLowerButton()
+    {
+        return controller.lt;
+    }
+    
+    public Button getReverseButton()
+    {
+        return controller.rt;
+    }
 }
