@@ -36,7 +36,7 @@ public class Shooter_RunFlywheels extends Command
     @Override
     protected void end()
     {
-        
+        Robot.shooter.set(RobotMap.SHOOTER_FLYWHEEL_RPM);
     }
     
     @Override
