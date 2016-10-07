@@ -27,24 +27,27 @@ public class Vision_AcquireGoal extends Command
     @Override
     protected void execute()
     {
+        double err;
         VisionReport vr = Robot.vision.getVisionResults();
         if(vr == null)
         {
             if(lastReport != null)
             {
                 vr = lastReport;
+                err = (vr.relxpos - .5)/2;
             }
             else
             {
                 return;
             }
         }
-
-        double err = (vr.relxpos - .5); 
-        if(lastReport.time == vr.time)
+        else
         {
-            err/=2;
+            err = (vr.relxpos - .5);
+            lastReport = vr;
         }
+          
+
         double out = RobotMap.TURRET_VISION_P*err + prev*RobotMap.TURRET_VISION_D;
         prev = err;
         if(Math.abs(err) < RobotMap.TURRET_VISION_IZONE)
