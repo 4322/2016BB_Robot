@@ -84,7 +84,7 @@ public class VisionThread extends Thread
             {
                 IMAQdxStartAcquisition(id);
                 criteria[0] = new ParticleFilterCriteria2(
-                        MeasurementType.MT_AREA_BY_IMAGE_AREA, 0.5, 100.0, 0,
+                        MeasurementType.MT_AREA_BY_IMAGE_AREA, 0.05, 100.0, 0,
                         0);
                 IMAQdxGetImage(id, frame,
                         IMAQdxBufferNumberMode.BufferNumberModeBufferNumber, 0);
@@ -146,12 +146,6 @@ public class VisionThread extends Thread
                         continue;
                     }
                     vr.distance = 1.8/(20.0*((double)vr.bboxwidth/(double)size.width)*Math.tan((hFOV)*Math.PI/(180.0*2.0)));
-//                    if (Math.abs(vr.hu1 - targetHU1) < .2)
-//                    {
-//                        RobotLogger.getInstance()
-//                                .log("adding Hu1 match bonus!\n");
-//                        vr.score += 10;
-//                    }
                     objects.add(vr);
                 }
                 objects.sort((x, y) -> x.score > y.score ? 1 : -1);
