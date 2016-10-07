@@ -19,7 +19,7 @@ public class OI
         CoPilotController.getInstance().getShootButton().whileHeld(new Group_Shoot());
         CoPilotController.getInstance().getHoodDownButton().whenPressed(new Shooter_LowerHood());        
         CoPilotController.getInstance().getHoodUpButton().whenPressed(new Shooter_RaiseHood());
-        CoPilotController.getInstance().getFireButton().whenPressed(new Group_Fire());
+        CoPilotController.getInstance().getFireButton().whileHeld(new Group_Fire());
         CoPilotController.getInstance().getStopShooter().whenPressed(new Shooter_StopFlywheels());
     }
 }
