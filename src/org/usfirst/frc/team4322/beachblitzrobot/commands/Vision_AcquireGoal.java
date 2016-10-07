@@ -3,6 +3,7 @@ package org.usfirst.frc.team4322.beachblitzrobot.commands;
 import org.usfirst.frc.team4322.beachblitzrobot.Robot;
 import org.usfirst.frc.team4322.beachblitzrobot.RobotMap;
 import org.usfirst.frc.team4322.beachblitzrobot.vision.VisionReport;
+import org.usfirst.frc.team4322.logging.RobotLogger;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -71,7 +72,7 @@ public class Vision_AcquireGoal extends Command
     @Override
     protected void end()
     {
-        
+        RobotLogger.getInstance().warn("Aligned!");
     }
 
     @Override

@@ -40,6 +40,7 @@ public class Robot extends IterativeRobot
         RobotLogger.getInstance().update(false);
         MapSynchronizer.getInstance().link(RobotMap.class);
         MapSynchronizer.getInstance().link(VisionThread.class);
+        MapSynchronizer.getInstance().link(RobotLogger.class);
         collector = new Collector();
         driveBase = new DriveBase();
         feeder = new Feeder();
