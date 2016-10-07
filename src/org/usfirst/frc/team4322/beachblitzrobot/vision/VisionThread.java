@@ -101,7 +101,7 @@ public class VisionThread extends Thread
                 for (int i = 0; i < numParticles; i++)
                 {
                     VisionReport vr = new VisionReport();
-                      
+                     
                     vr.area = imaqMeasureParticle(binarizedFrame, i, 0,
                             MeasurementType.MT_AREA);
                     vr.bboxwidth = imaqMeasureParticle(binarizedFrame, i, 0,
@@ -138,7 +138,7 @@ public class VisionThread extends Thread
                     vr.score = (vr.aspectScore + vr.areaScore) / 2;
                     vr.relxpos = vr.xpos / size.width;
                     vr.relypos = vr.ypos / size.height;
-                    if(vr.relypos > size.height/2.5)
+                    if(vr.ypos > size.height/2.5)
                     {
                         vr.score += 10;
                     }
