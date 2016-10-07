@@ -84,7 +84,7 @@ public class VisionThread extends Thread
             {
                 IMAQdxStartAcquisition(id);
                 criteria[0] = new ParticleFilterCriteria2(
-                        MeasurementType.MT_AREA_BY_IMAGE_AREA, 0.0, 20.0, 0,
+                        MeasurementType.MT_AREA_BY_IMAGE_AREA, 7.5, 20.0, 0,
                         0);
                 IMAQdxGetImage(id, frame,
                         IMAQdxBufferNumberMode.BufferNumberModeBufferNumber, 0);
