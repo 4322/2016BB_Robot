@@ -3,6 +3,7 @@ package org.usfirst.frc.team4322.beachblitzrobot.subsystems;
 import org.usfirst.frc.team4322.beachblitzrobot.RobotMap;
 import org.usfirst.frc.team4322.beachblitzrobot.commands.Feeder_StopFeeder;
 import org.usfirst.frc.team4322.beachblitzrobot.commands.Shooter_RunFlywheels;
+import org.usfirst.frc.team4322.beachblitzrobot.commands.Shooter_StopFlywheels;
 
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
@@ -63,12 +64,12 @@ public class Shooter extends Subsystem
     }
 
     
-//    @Override
-//    protected Command getDefaultCommand()
-//    {
-//        // TODO Auto-generated method stub
-//        return new Shooter_RunFlywheels();
-//    }
+    @Override
+    protected Command getDefaultCommand()
+    {
+        // TODO Auto-generated method stub
+        return new Shooter_StopFlywheels();
+    }
 
     public void initDefaultCommand()
     {
