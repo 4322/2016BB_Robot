@@ -20,7 +20,7 @@ public class Feeder_LoadShooter extends Command
     @Override
     protected void execute()
     {
-        Robot.feeder.set(1);
+        Robot.feeder.set(-1);
     }
 
     @Override
