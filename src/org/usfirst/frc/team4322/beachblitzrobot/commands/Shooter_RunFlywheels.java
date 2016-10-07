@@ -11,7 +11,6 @@ public class Shooter_RunFlywheels extends Command
     public Shooter_RunFlywheels()
     {
         requires(Robot.shooter);
-        setTimeout(RobotMap.SHOOTER_STABILIZATION_TIMEOUT);
     }
     
     @Override
@@ -31,7 +30,7 @@ public class Shooter_RunFlywheels extends Command
     @Override
     protected boolean isFinished()
     {
-        return stablecount > RobotMap.SHOOTER_STABLE_THRESHOLD;
+        return stablecount > 1000;
     }
 
     @Override
