@@ -27,16 +27,11 @@ public class Shooter extends Subsystem
     {
         flywheelLeftTalon = new CANTalon(
                 RobotMap.SHOOTER_FLYWHEEL_LEFT_TALONSRX_ID);
-        flywheelLeftTalon.changeControlMode(TalonControlMode.Speed);
+        flywheelLeftTalon.changeControlMode(TalonControlMode.PercentVbus);
         flywheelRightTalon = new CANTalon(
                 RobotMap.SHOOTER_FLYWHEEL_RIGHT_TALONSRX_ID);
         flywheelRightTalon.changeControlMode(TalonControlMode.Follower);
         flywheelRightTalon.set(RobotMap.SHOOTER_FLYWHEEL_LEFT_TALONSRX_ID);
-        flywheelLeftTalon
-                .setFeedbackDevice(FeedbackDevice.CtreMagEncoder_Absolute);
-        hoodSolenoid = new DoubleSolenoid(
-                RobotMap.SHOOTER_HOOD_PISTON_LEFT_SOLENOID_PORT,
-                RobotMap.SHOOTER_HOOD_PISTON_RIGHT_SOLENOID_PORT);
     }
 
     public void set(double rpm)
