@@ -20,8 +20,8 @@ public class VisionThread extends Thread
     private VisionReport out = null;
     private static final double idealAspect = 20 / 12;
     ParticleFilterCriteria2 criteria[] = new ParticleFilterCriteria2[1];
-    ParticleFilterOptions2 filterOptions = new ParticleFilterOptions2(0, 0, 1,
-            1);
+    ParticleFilterOptions2 filterOptions = new ParticleFilterOptions2(0, 0, 0,
+            0);
     @DashboardInputField(field = "Red Min Value: ")
     public static int rMin = 0;
     @DashboardInputField(field = "Red Max Value: ")
