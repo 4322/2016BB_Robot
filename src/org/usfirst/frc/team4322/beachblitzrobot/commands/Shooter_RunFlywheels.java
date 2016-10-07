@@ -11,6 +11,7 @@ public class Shooter_RunFlywheels extends Command
     public Shooter_RunFlywheels()
     {
         requires(Robot.shooter);
+        setTimeout(1.5);
         requires(Robot.feeder);
     }
     
@@ -31,7 +32,7 @@ public class Shooter_RunFlywheels extends Command
     @Override
     protected boolean isFinished()
     {
-        return false;
+        return isTimedOut();
     }
 
     @Override
