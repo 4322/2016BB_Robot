@@ -138,7 +138,7 @@ public class VisionThread extends Thread
                     vr.score = (vr.aspectScore + vr.areaScore) / 2;
                     vr.relxpos = vr.xpos / size.width;
                     vr.relypos = vr.ypos / size.height;
-                    if(vr.ypos > size.height/2.5)
+                    if(vr.ypos < size.height/2.5)
                     {
                         vr.score += 10;
                     }
