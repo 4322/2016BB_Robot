@@ -19,9 +19,6 @@ public class VisionThread extends Thread
     private boolean queried = false;
     private VisionReport out = null;
     private static final double idealAspect = 20 / 12;
-    ParticleFilterCriteria2 criteria[] = new ParticleFilterCriteria2[1];
-    ParticleFilterOptions2 filterOptions = new ParticleFilterOptions2(0, 0, 0,
-            0);
     @DashboardInputField(field = "Red Min Value: ")
     public static int rMin = 0;
     @DashboardInputField(field = "Red Max Value: ")
@@ -93,8 +90,8 @@ public class VisionThread extends Thread
                         new Range(rMin, rMax), new Range(gMin, gMax),
                         new Range(bMin, bMax));
                 imaqDuplicate(display, binarizedFrame);
-                imaqParticleFilter4(binarizedFrame, binarizedFrame, criteria,
-                        filterOptions, null);
+                imaqParticleFilter4(binarizedFrame, binarizedFrame, null,
+                        null, null);
                 int numParticles = imaqCountParticles(binarizedFrame, 1);
                 ArrayList<VisionReport> objects = new ArrayList<>();
                 for (int i = 0; i < numParticles; i++)
