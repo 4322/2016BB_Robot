@@ -52,11 +52,11 @@ public class PilotController
     
     public Button getForwardButton()
     {
-        return controller.b;
+        return controller.a;
     }
     
     public Button getReverseButton()
     {
-        return controller.a;
+        return controller.b;
     }
 }
