@@ -143,12 +143,12 @@ public class VisionThread extends Thread
                         vr.score += 10;
                     }
                     vr.distance = 1.8/(20.0*((double)vr.bboxwidth/(double)size.width)*Math.tan((hFOV)*Math.PI/(180.0*2.0)));
-                    if (Math.abs(vr.hu1 - targetHU1) < .2)
-                    {
-                        RobotLogger.getInstance()
-                                .log("adding Hu1 match bonus!\n");
-                        vr.score += 10;
-                    }
+//                    if (Math.abs(vr.hu1 - targetHU1) < .2)
+//                    {
+//                        RobotLogger.getInstance()
+//                                .log("adding Hu1 match bonus!\n");
+//                        vr.score += 10;
+//                    }
                     objects.add(vr);
                 }
                 objects.sort((x, y) -> x.score > y.score ? 1 : -1);
