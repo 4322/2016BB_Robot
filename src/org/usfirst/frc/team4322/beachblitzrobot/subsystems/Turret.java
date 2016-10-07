@@ -28,14 +28,14 @@ public class Turret extends Subsystem
         
         if(speed > 0 )
         {
-            if(!rightLimit.get())
+            if(rightLimit.get())
                 turretTalon.set(0);
             else
                 turretTalon.set(speed);
         }
         else if(speed < 0)
         {
-            if(!leftLimit.get())
+            if(leftLimit.get())
                 turretTalon.set(0);
             else
                 turretTalon.set(speed);
