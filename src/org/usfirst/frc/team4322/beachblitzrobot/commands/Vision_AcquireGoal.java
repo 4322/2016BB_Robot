@@ -14,7 +14,6 @@ public class Vision_AcquireGoal extends Command
     public Vision_AcquireGoal()
     {
         requires(Robot.turret);
-        this.setTimeout(RobotMap.VISION_ACQUISITION_TIMEOUT);
     }
   
     @Override
