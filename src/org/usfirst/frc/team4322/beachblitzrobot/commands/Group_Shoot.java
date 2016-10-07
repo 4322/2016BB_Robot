@@ -8,9 +8,9 @@ public class Group_Shoot extends CommandGroup
     {
 //        addSequential(new Vision_AcquireGoal());
         addSequential(new Shooter_RunFlywheels());
-        addSequential(new Feeder_LoadShooter());
-        addSequential(new Command_Delay(5));
-        addSequential(new Feeder_StopFeeder());
+        addParallel(new Feeder_LoadShooter());
+        addParallel(new Command_Delay(.5));
+        addParallel(new Feeder_StopFeeder());
         addSequential(new Shooter_StopFlywheels());
     }
 }
