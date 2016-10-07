@@ -52,6 +52,8 @@ public class RobotMap
     public static int TURRET_VISION_LOCKIN_COUNT = 10;
     @DashboardInputField(field="Vision Allowed Error: ")
     public static double TURRET_VISION_ALLOWED_ERR = .025;
+    public static int TURRET_LEFT_LIMIT_SWITCH = 1;
+    public static int TURRET_RIGHT_LIMIT_SWITCH = 2;
     /**
      * Shooter
      */

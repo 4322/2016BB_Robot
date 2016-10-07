@@ -2,6 +2,7 @@ package org.usfirst.frc.team4322.beachblitzrobot.subsystems;
 
 import org.usfirst.frc.team4322.beachblitzrobot.RobotMap;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -12,14 +13,31 @@ public class Turret extends Subsystem
 {
 
     private Talon turretTalon = null;
-
+    private DigitalInput leftLimit, rightLimit;
     public Turret()
     {
         turretTalon = new Talon(RobotMap.TURRET_RING_TALONSR_ID);
+        leftLimit = new DigitalInput(RobotMap.TURRET_LEFT_LIMIT_SWITCH);
+        rightLimit = new DigitalInput(RobotMap.TURRET_RIGHT_LIMIT_SWITCH);
     }
 
     public void set(double speed)
     {
+        if(leftLimit.get())
+        {
+            if(speed < 0)
+                turretTalon.set(0);
+            else
+                turretTalon.set(speed);
+        }
+        else if(rightLimit.get())
+        {
+            if(speed > 0)
+                turretTalon.set(0);
+            else
+                turretTalon.set(speed);
+        }
+        
         turretTalon.set(speed);
     }
 
