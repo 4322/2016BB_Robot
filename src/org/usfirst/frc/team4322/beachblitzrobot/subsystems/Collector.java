@@ -30,7 +30,7 @@ public class Collector extends Subsystem {
         @Override
         public void interruptFired(int interruptAssertedMask, Object param)
         {
-            Robot.collector.ballSwitch.disableInterrupts();
+            Robot.collector.ballSwitch.requestInterrupts(this);;
             Robot.collector.intenabled =false;
             Robot.feeder.set(0);
         }
