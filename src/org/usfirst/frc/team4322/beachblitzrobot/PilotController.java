@@ -55,6 +55,11 @@ public class PilotController
         return controller.a;
     }
     
+    public Button getLowGoalButton()
+    {
+        return controller.rt;
+    }
+    
     public Button getReverseButton()
     {
         return controller.b;
