@@ -7,7 +7,7 @@ public class Group_Fire extends CommandGroup
     public Group_Fire()
     {
         addSequential(new Feeder_LoadShooter());
-        addSequential(new Command_Delay(5));
+        addSequential(new Command_Delay(1));
         addSequential(new Feeder_StopFeeder());
         addSequential(new Shooter_StopFlywheels());
     }

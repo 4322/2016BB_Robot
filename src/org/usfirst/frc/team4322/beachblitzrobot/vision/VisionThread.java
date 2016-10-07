@@ -116,18 +116,6 @@ public class VisionThread extends Thread
                             MeasurementType.MT_CENTER_OF_MASS_X);
                     vr.ypos = imaqMeasureParticle(binarizedFrame, i, 0,
                             MeasurementType.MT_CENTER_OF_MASS_Y);
-                    vr.hu1 = imaqMeasureParticle(binarizedFrame, i, 0,
-                            MeasurementType.MT_HU_MOMENT_1);
-                    vr.hu2 = imaqMeasureParticle(binarizedFrame, i, 0,
-                            MeasurementType.MT_HU_MOMENT_2);
-                    vr.hu3 = imaqMeasureParticle(binarizedFrame, i, 0,
-                            MeasurementType.MT_HU_MOMENT_3);
-                    vr.hu4 = imaqMeasureParticle(binarizedFrame, i, 0,
-                            MeasurementType.MT_HU_MOMENT_4);
-                    vr.hu5 = imaqMeasureParticle(binarizedFrame, i, 0,
-                            MeasurementType.MT_HU_MOMENT_5);
-                    vr.hu6 = imaqMeasureParticle(binarizedFrame, i, 0,
-                            MeasurementType.MT_HU_MOMENT_6);
                     vr.boundingBoxArea = vr.bboxheight * vr.bboxwidth;
                     vr.areaScore = ratioToScore(
                             (vr.area / (vr.boundingBoxArea)) * 3);
@@ -146,22 +134,6 @@ public class VisionThread extends Thread
                     {
                         continue;
                     }
-                    out = vr;
-                    Rect rec = new NIVision.Rect((int) out.bboxtop + 1,
-                            (int) out.bboxleft - 1, (int) out.bboxheight + 2,
-                            (int) out.bboxwidth + 2);
-                    imaqDrawShapeOnImage(display, display, rec,
-                            DrawMode.DRAW_VALUE, ShapeMode.SHAPE_RECT,
-                            (float) 127.0);
-                    imaqDrawLineOnImage(display, display, DrawMode.DRAW_VALUE,
-                            new Point((int) out.xpos - 10, (int) out.ypos),
-                            new Point((int) out.xpos - 10, (int) out.ypos + 10),
-                            255f);
-                    imaqDrawLineOnImage(display, display, DrawMode.DRAW_VALUE,
-                            new Point((int) out.xpos, (int) out.ypos + 10),
-                            new Point((int) out.xpos, (int) out.ypos + 10),
-                            255f);
-                    vr.distance = 1.8/(20.0*((double)vr.bboxwidth/(double)size.width)*Math.tan((hFOV)*Math.PI/(180.0*2.0)));
                     objects.add(vr);
                 }
                 objects.sort((x, y) -> x.score > y.score ? 1 : -1);
@@ -173,19 +145,13 @@ public class VisionThread extends Thread
                             in.aspectScore);
                     RobotLogger.getInstance().log("AREA: %f ASPECT: %f\n",
                             in.area, in.aspect);
-                    RobotLogger.getInstance().log("HU1: %f HU2: %f\n", in.hu1,
-                            in.hu2);
-                    RobotLogger.getInstance().log("HU3: %f HU4: %f\n", in.hu3,
-                            in.hu4);
-                    RobotLogger.getInstance().log("HU5: %f HU6: %f\n", in.hu5,
-                            in.hu6);
                     RobotLogger.getInstance().log("XPOS: %f YPOS: %f\n",
                             in.xpos, in.ypos);
                     RobotLogger.getInstance().log("XPOS-REL: %f YPOS-REL: %f\n",
                             in.relxpos, in.relypos);
-                    RobotLogger.getInstance().log("DISTANCE: %f\n", in.distance);
-                    SmartDashboard.putNumber("TARGET DISTANCE (ft): ", in.distance);
-                    SmartDashboard.putNumber("TARGET DISTANCE (in): ", in.distance*12);
+//                    RobotLogger.getInstance().log("DISTANCE: %f\n", in.distance);
+//                    SmartDashboard.putNumber("TARGET DISTANCE (ft): ", in.distance);
+//                    SmartDashboard.putNumber("TARGET DISTANCE (in): ", in.distance*12);
 
                 }
                 if (!(objects.size() == 0))
