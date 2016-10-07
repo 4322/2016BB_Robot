@@ -30,7 +30,7 @@ public class Shooter_RunFlywheels extends Command
     @Override
     protected boolean isFinished()
     {
-        return stablecount > 1000;
+        return true;
     }
 
     @Override
