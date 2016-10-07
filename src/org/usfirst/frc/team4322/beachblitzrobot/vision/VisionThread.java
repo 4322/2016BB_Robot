@@ -84,7 +84,7 @@ public class VisionThread extends Thread
             {
                 IMAQdxStartAcquisition(id);
                 criteria[0] = new ParticleFilterCriteria2(
-                        MeasurementType.MT_AREA_BY_IMAGE_AREA, 10.0, 100.0, 0,
+                        MeasurementType.MT_AREA_BY_IMAGE_AREA, 0.0, 20.0, 0,
                         0);
                 IMAQdxGetImage(id, frame,
                         IMAQdxBufferNumberMode.BufferNumberModeBufferNumber, 0);
@@ -96,6 +96,7 @@ public class VisionThread extends Thread
                 imaqParticleFilter4(binarizedFrame, binarizedFrame, criteria,
                         filterOptions, null);
                 int numParticles = imaqCountParticles(binarizedFrame, 1);
+                RobotLogger.getInstance().log("Particle count: %d\n",numParticles);
                 ArrayList<VisionReport> objects = new ArrayList<>();
                 for (int i = 0; i < numParticles; i++)
                 {
