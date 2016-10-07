@@ -28,14 +28,7 @@ public class Shooter_RunFlywheels extends Command
     @Override
     protected void execute()
     {
-        if(Robot.shooter.inTolerance())
-        {
-            stablecount++;
-        }
-        else
-        {
-            stablecount = 0;
-        }
+        stablecount++;
     }
 
     @Override
