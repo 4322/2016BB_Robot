@@ -84,7 +84,7 @@ public class VisionThread extends Thread
             {
                 IMAQdxStartAcquisition(id);
                 criteria[0] = new ParticleFilterCriteria2(
-                        MeasurementType.MT_AREA_BY_IMAGE_AREA, 5, 50.0, 0,
+                        MeasurementType.MT_AREA_BY_IMAGE_AREA, 2.5, 100.0, 0,
                         0);
                 IMAQdxGetImage(id, frame,
                         IMAQdxBufferNumberMode.BufferNumberModeBufferNumber, 0);
@@ -141,10 +141,6 @@ public class VisionThread extends Thread
                     if(vr.ypos > size.height/2.5)
                     {
                         vr.score += 10;
-                    }
-                    else
-                    {
-                        continue;
                     }
                     out = vr;
                     Rect rec = new NIVision.Rect((int) out.bboxtop + 1,
