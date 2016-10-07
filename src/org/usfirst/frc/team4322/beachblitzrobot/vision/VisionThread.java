@@ -142,6 +142,10 @@ public class VisionThread extends Thread
                     {
                         vr.score += 10;
                     }
+                    else
+                    {
+                        vr.score -=10;
+                    }
                     vr.distance = 1.8/(20.0*((double)vr.bboxwidth/(double)size.width)*Math.tan((hFOV)*Math.PI/(180.0*2.0)));
 //                    if (Math.abs(vr.hu1 - targetHU1) < .2)
 //                    {
