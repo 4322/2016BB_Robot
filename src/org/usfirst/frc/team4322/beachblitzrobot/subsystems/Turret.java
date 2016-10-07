@@ -39,8 +39,7 @@ public class Turret extends Subsystem
             else
                 turretTalon.set(speed);
         }
-        
-        turretTalon.set(speed);
+       
     }
 
     public void initDefaultCommand()
