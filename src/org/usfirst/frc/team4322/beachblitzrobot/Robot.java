@@ -5,6 +5,8 @@ import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc.team4322.beachblitzrobot.subsystems.*;
 import org.usfirst.frc.team4322.beachblitzrobot.vision.VisionThread;
 import org.usfirst.frc.team4322.dashboard.MapSynchronizer;
@@ -97,6 +99,7 @@ public class Robot extends IterativeRobot
      */
     public void teleopPeriodic()
     {
+        SmartDashboard.putBoolean("Ball Detector: ",Robot.collector.ballSwitchTriggered());
         Scheduler.getInstance().run();
     }
 
