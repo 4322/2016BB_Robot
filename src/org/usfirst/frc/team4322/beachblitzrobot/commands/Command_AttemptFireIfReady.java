@@ -17,9 +17,13 @@ public class Command_AttemptFireIfReady extends Command
     @Override
     public void start()
     {
-        if(true)
+        if(Robot.acquisitionWasSuccessful)
         {
             Scheduler.getInstance().add(new Group_Fire());
+        }
+        else
+        {
+            Scheduler.getInstance().add(new Shooter_StopFlywheels());
         }
     }
     
