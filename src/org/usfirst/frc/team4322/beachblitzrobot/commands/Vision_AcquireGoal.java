@@ -39,7 +39,12 @@ public class Vision_AcquireGoal extends Command
                 return;
             }
         }
+
         double err = (vr.relxpos - .5); 
+        if(lastReport.time == vr.time)
+        {
+            err/=2;
+        }
         double out = RobotMap.TURRET_VISION_P*err + prev*RobotMap.TURRET_VISION_D;
         prev = err;
         if(Math.abs(err) < RobotMap.TURRET_VISION_IZONE)
