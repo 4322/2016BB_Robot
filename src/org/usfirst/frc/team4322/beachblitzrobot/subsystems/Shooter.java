@@ -63,12 +63,12 @@ public class Shooter extends Subsystem
     }
 
     
-    @Override
-    protected Command getDefaultCommand()
-    {
-        // TODO Auto-generated method stub
-        return new Shooter_RunFlywheels();
-    }
+//    @Override
+//    protected Command getDefaultCommand()
+//    {
+//        // TODO Auto-generated method stub
+//        return new Shooter_RunFlywheels();
+//    }
 
     public void initDefaultCommand()
     {
