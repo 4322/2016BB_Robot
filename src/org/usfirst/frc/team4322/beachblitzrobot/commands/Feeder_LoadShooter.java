@@ -9,6 +9,7 @@ public class Feeder_LoadShooter extends Command
     public Feeder_LoadShooter()
     {
         requires(Robot.feeder);
+        setTimeout(5);
     }
     
     @Override
@@ -26,7 +27,7 @@ public class Feeder_LoadShooter extends Command
     @Override
     protected boolean isFinished()
     {
-        return true;
+        return isTimedOut();
     }
 
     @Override
