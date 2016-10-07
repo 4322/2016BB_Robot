@@ -22,7 +22,7 @@ public class Collector extends Subsystem {
     private DoubleSolenoid collectorPistons;
     private Talon collectorTalon;
     private DigitalInput ballSwitch;
-    private boolean intenabled = false; 
+    public boolean intenabled = false; 
     
     private static class BallInterruptHandler extends InterruptHandlerFunction<Object>
     {
@@ -30,15 +30,9 @@ public class Collector extends Subsystem {
         @Override
         public void interruptFired(int interruptAssertedMask, Object param)
         {
-            Robot.collector.collectorTalon.set(0);
             Robot.collector.ballSwitch.disableInterrupts();
             Robot.collector.intenabled =false;
-            Robot.driveBase.swapForward();
-            Robot.collector.retractArm();
-            Robot.collector.collectorStop();
             Robot.feeder.set(0);
-            new Feeder_StopFeeder().start();
-            new Collector_Stop().start();
         }
         
     }

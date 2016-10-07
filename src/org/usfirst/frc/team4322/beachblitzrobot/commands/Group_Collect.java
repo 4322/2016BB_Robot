@@ -9,6 +9,9 @@ public class Group_Collect extends CommandGroup
         addSequential(new Collector_Lower());
         addParallel(new Feeder_Run());
         addParallel(new Collector_Collect());
-        addSequential(new DriveBase_SwapForward());
+        addSequential(new Command_WaitForInt());
+        addParallel(new Feeder_StopFeeder());
+        addParallel(new Collector_Stop());
+        addParallel(new Collector_Raise());
     }
 }
