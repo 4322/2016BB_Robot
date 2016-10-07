@@ -27,7 +27,7 @@ public class VisionThread extends Thread
     @DashboardInputField(field = "Red Max Value: ")
     public static int rMax = 255;
     @DashboardInputField(field = "Green Min Value: ")
-    public static int gMin = 235;
+    public static int gMin = 240;
     @DashboardInputField(field = "Green Max Value: ")
     public static int gMax = 255;
     @DashboardInputField(field = "Blue Min Value: ")
