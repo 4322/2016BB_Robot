@@ -43,11 +43,11 @@ public class RobotMap
     @DashboardInputField(field="Turret P: ")
     public static double TURRET_VISION_P = 2.75;
     @DashboardInputField(field="Turret I: ")
-    public static double TURRET_VISION_I = 1;
+    public static double TURRET_VISION_I = .5;
     @DashboardInputField(field="Turret D: ")
     public static double TURRET_VISION_D = 1;
     @DashboardInputField(field="Turret IZone: ")
-    public static int TURRET_VISION_IZONE = 40;
+    public static double TURRET_VISION_IZONE = .1;
     @DashboardInputField(field="Vision Lockin Count: ")
     public static int TURRET_VISION_LOCKIN_COUNT = 10;
     @DashboardInputField(field="Vision Allowed Error: ")
