@@ -102,8 +102,6 @@ public class Robot extends IterativeRobot
         SmartDashboard.putBoolean("Ball Detector: ",Robot.collector.ballSwitchTriggered());
         SmartDashboard.putBoolean("Left Limit: ",Robot.turret.leftLimit.get());
         SmartDashboard.putBoolean("Right Limit: ",Robot.turret.rightLimit.get());
-        Robot.turret.set(1);
-
         Scheduler.getInstance().run();
     }
 

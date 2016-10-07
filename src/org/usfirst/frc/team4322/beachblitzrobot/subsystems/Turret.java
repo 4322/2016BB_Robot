@@ -4,6 +4,7 @@ import org.usfirst.frc.team4322.beachblitzrobot.RobotMap;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -23,14 +24,14 @@ public class Turret extends Subsystem
 
     public void set(double speed)
     {
-        if(leftLimit.get())
+        if(rightLimit.get())
         {
             if(speed > 0)
                 turretTalon.set(0);
             else
                 turretTalon.set(speed);
         }
-        else if(rightLimit.get())
+        else if(leftLimit.get())
         {
             if(speed > 0)
                 turretTalon.set(0);
@@ -44,5 +45,12 @@ public class Turret extends Subsystem
     public void initDefaultCommand()
     {
 
+    }
+
+    @Override
+    protected Command getDefaultCommand()
+    {
+        // TODO Auto-generated method stub
+        return super.getDefaultCommand();
     }
 }

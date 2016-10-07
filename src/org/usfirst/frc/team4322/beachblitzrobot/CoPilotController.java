@@ -37,5 +37,10 @@ public class CoPilotController
     {
         return controller.lb;
     }
+    
+    public double getTurretRotation()
+    {
+        return controller.leftStick.getX();
+    }
 
 }
