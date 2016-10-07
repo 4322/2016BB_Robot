@@ -7,6 +7,6 @@ public class Group_StopCollector extends CommandGroup
     public Group_StopCollector()
     {
         addSequential(new Collector_Stop());
-        addParallel(new Collector_Raise());
+        addSequential(new Collector_Raise());
     }
 }
