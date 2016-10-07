@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4322.beachblitzrobot.subsystems;
 
 import org.usfirst.frc.team4322.beachblitzrobot.RobotMap;
+import org.usfirst.frc.team4322.beachblitzrobot.commands.Turret_ManualMove;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Talon;
@@ -51,6 +52,6 @@ public class Turret extends Subsystem
     protected Command getDefaultCommand()
     {
         // TODO Auto-generated method stub
-        return super.getDefaultCommand();
+        return new Turret_ManualMove();
     }
 }
