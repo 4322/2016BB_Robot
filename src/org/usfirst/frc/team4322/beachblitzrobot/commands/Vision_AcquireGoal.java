@@ -80,7 +80,7 @@ public class Vision_AcquireGoal extends Command
     @Override
     protected void end()
     {
-        RobotLogger.getInstance().warn("Aligned!");
+        done = false;
     }
 
     @Override
