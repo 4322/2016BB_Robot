@@ -10,8 +10,8 @@ public class Group_Collect extends CommandGroup
         addParallel(new Feeder_Run());
         addParallel(new Collector_Collect());
         addSequential(new Command_WaitForInt());
-        addParallel(new Feeder_StopFeeder());
-        addParallel(new Collector_Stop());
-        addParallel(new Collector_Raise());
+        addSequential(new Feeder_StopFeeder());
+        addSequential(new Collector_Stop());
+        addSequential(new Collector_Raise());
     }
 }
