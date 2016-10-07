@@ -47,4 +47,9 @@ public class CoPilotController
     {
         return controller.start;
     }
+    
+    public Button getFireButton()
+    {
+        return controller.rt;
+    }
 }
