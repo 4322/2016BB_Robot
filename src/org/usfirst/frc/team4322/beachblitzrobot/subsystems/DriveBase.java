@@ -118,4 +118,9 @@ public class DriveBase extends Subsystem
     {
            
     }
+    
+    public boolean isReversed()
+    {
+        return reversed;
+    }
 }

@@ -50,8 +50,18 @@ public class PilotController
         return controller.lt;
     }
     
-    public Button getReverseButton()
+    public Button getChevalButton()
     {
         return controller.rt;
+    }
+    
+    public Button getForwardButton()
+    {
+        return controller.y;
+    }
+    
+    public Button getReverseButton()
+    {
+        return controller.a;
     }
 }
