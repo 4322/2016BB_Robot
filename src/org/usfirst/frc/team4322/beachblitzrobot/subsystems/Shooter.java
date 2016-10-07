@@ -32,16 +32,12 @@ public class Shooter extends Subsystem
                 RobotMap.SHOOTER_FLYWHEEL_RIGHT_TALONSRX_ID);
         flywheelRightTalon.changeControlMode(TalonControlMode.Follower);
         flywheelRightTalon.set(RobotMap.SHOOTER_FLYWHEEL_LEFT_TALONSRX_ID);
+        hoodSolenoid = new DoubleSolenoid(RobotMap.SHOOTER_HOOD_PISTON_LEFT_SOLENOID_PORT,RobotMap.SHOOTER_HOOD_PISTON_RIGHT_SOLENOID_PORT);
     }
 
     public void set(double rpm)
     {
         flywheelLeftTalon.set(rpm);
-    }
-
-    public void setPID(double p, double i, double d, int iZ)
-    {
-        flywheelLeftTalon.setPID(p, i, d, 0, iZ, 0, 0);
     }
 
     public void setTolerance(int allowedErr)
