@@ -14,14 +14,9 @@ public class Command_Delay extends Command
     public Command_Delay(double seconds)
     {
         this.seconds = (long) (seconds*1000);
+        this.seconds /=20;
     }
     
-    @Override
-    public void start()
-    {
-        target = System.currentTimeMillis() + seconds;
-        super.start();
-    }
 
     @Override
     protected void initialize()
@@ -32,12 +27,13 @@ public class Command_Delay extends Command
     @Override
     protected void execute()
     {
+        target+=1;
     }
 
     @Override
     protected boolean isFinished()
     {
-        return System.currentTimeMillis() >= target;
+        return target >= seconds;
     }
 
     @Override
