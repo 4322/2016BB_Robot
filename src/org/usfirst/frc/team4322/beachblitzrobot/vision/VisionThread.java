@@ -145,6 +145,21 @@ public class VisionThread extends Thread
                     {
                         continue;
                     }
+                    out = vr;
+                    Rect rec = new NIVision.Rect((int) out.bboxtop + 1,
+                            (int) out.bboxleft - 1, (int) out.bboxheight + 2,
+                            (int) out.bboxwidth + 2);
+                    imaqDrawShapeOnImage(display, display, rec,
+                            DrawMode.DRAW_VALUE, ShapeMode.SHAPE_RECT,
+                            (float) 127.0);
+                    imaqDrawLineOnImage(display, display, DrawMode.DRAW_VALUE,
+                            new Point((int) out.xpos - 10, (int) out.ypos),
+                            new Point((int) out.xpos - 10, (int) out.ypos + 10),
+                            255f);
+                    imaqDrawLineOnImage(display, display, DrawMode.DRAW_VALUE,
+                            new Point((int) out.xpos, (int) out.ypos + 10),
+                            new Point((int) out.xpos, (int) out.ypos + 10),
+                            255f);
                     vr.distance = 1.8/(20.0*((double)vr.bboxwidth/(double)size.width)*Math.tan((hFOV)*Math.PI/(180.0*2.0)));
                     objects.add(vr);
                 }
