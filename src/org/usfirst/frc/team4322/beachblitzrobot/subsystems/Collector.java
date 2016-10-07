@@ -2,6 +2,7 @@ package org.usfirst.frc.team4322.beachblitzrobot.subsystems;
 
 import org.usfirst.frc.team4322.beachblitzrobot.Robot;
 import org.usfirst.frc.team4322.beachblitzrobot.RobotMap;
+import org.usfirst.frc.team4322.beachblitzrobot.commands.Collector_Raise;
 import org.usfirst.frc.team4322.beachblitzrobot.commands.Collector_Stop;
 
 import edu.wpi.first.wpilibj.DigitalInput;
@@ -9,6 +10,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.InterruptHandlerFunction;
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -47,6 +49,13 @@ public class Collector extends Subsystem {
         
     }
 
+
+    @Override
+    protected Command getDefaultCommand()
+    {
+        return new Collector_Raise();
+    }
+    
     public boolean ballSwitchTriggered()
     {
         return ballSwitch.get();

@@ -1,12 +1,14 @@
 package org.usfirst.frc.team4322.beachblitzrobot.subsystems;
 
 import org.usfirst.frc.team4322.beachblitzrobot.RobotMap;
+import org.usfirst.frc.team4322.beachblitzrobot.commands.Feeder_StopFeeder;
 
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
 import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -68,6 +70,7 @@ public class Shooter extends Subsystem
         hoodSolenoid.set(Value.kReverse);
     }
 
+    
     public void initDefaultCommand()
     {
         // Set the default command for a subsystem here.
