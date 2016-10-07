@@ -30,9 +30,11 @@ public class Shooter extends Subsystem
         flywheelLeftTalon = new CANTalon(
                 RobotMap.SHOOTER_FLYWHEEL_LEFT_TALONSRX_ID);
         flywheelLeftTalon.changeControlMode(TalonControlMode.PercentVbus);
+        flywheelLeftTalon.enableBrakeMode(false);;
         flywheelRightTalon = new CANTalon(
                 RobotMap.SHOOTER_FLYWHEEL_RIGHT_TALONSRX_ID);
         flywheelRightTalon.changeControlMode(TalonControlMode.Follower);
+        flywheelRightTalon.enableBrakeMode(false);;
         flywheelRightTalon.set(RobotMap.SHOOTER_FLYWHEEL_LEFT_TALONSRX_ID);
         hoodSolenoid = new DoubleSolenoid(RobotMap.SHOOTER_HOOD_PISTON_LEFT_SOLENOID_PORT,RobotMap.SHOOTER_HOOD_PISTON_RIGHT_SOLENOID_PORT);
     }
