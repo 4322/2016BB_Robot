@@ -41,7 +41,7 @@ public class Collector extends Subsystem {
         collectorPistons = new DoubleSolenoid(RobotMap.COLLECTOR_ARM_DOUBLESOLENOID_LEFT_PORT,
                                               RobotMap.COLLECTOR_ARM_DOUBLESOLENOID_RIGHT_PORT);
         collectorTalon = new Talon(RobotMap.COLLECTOR_ARM_TALONSR_ID);
-        collectorPistons.set(Value.kForward);
+        collectorPistons.set(Value.kReverse);
         ballSwitch = new DigitalInput(RobotMap.COLLECTOR_BALL_SWITCH_DIO_PORT);
         ballSwitch.requestInterrupts(new BallInterruptHandler());
         
