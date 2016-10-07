@@ -11,7 +11,8 @@ public class OI
     {
         PilotController.getInstance().getCollectButton().whenPressed(new Group_Collect());
         PilotController.getInstance().getRaiseButton().whenPressed(new Collector_Raise());
-        PilotController.getInstance().getChevalButton().whileHeld(new Collector_Lower());
+        PilotController.getInstance().getChevalButton().whenPressed(new Collector_Lower());
+        PilotController.getInstance().getChevalButton().whenReleased(new Collector_Raise());
         PilotController.getInstance().getForwardButton().whenPressed(new DriveBase_SetOrientation(true));
         PilotController.getInstance().getReverseButton().whenPressed(new DriveBase_SetOrientation(false));
         CoPilotController.getInstance().getShootButton().whenPressed(new Group_Shoot());
