@@ -58,7 +58,7 @@ public class Collector extends Subsystem {
         if(!intenabled)
         {
             Robot.collector.ballSwitch.enableInterrupts();
-            intenabled=false;
+            intenabled=true;
         }
     }
     
