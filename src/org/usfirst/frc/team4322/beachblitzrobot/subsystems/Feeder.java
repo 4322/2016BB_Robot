@@ -24,11 +24,11 @@ public class Feeder extends Subsystem {
         feederTalon.set(speed);
     }
     
-    @Override
+    /*@Override
     protected Command getDefaultCommand()
     {
         return new Feeder_StopFeeder();
-    }
+    }*/
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.

@@ -21,7 +21,7 @@ public class Feeder_Run extends Command
     @Override
     protected void execute()
     {
-        Robot.feeder.set(-.6);
+        Robot.feeder.set(-.5);
     }
 
     @Override
