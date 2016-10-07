@@ -13,7 +13,7 @@ public class Turret extends Subsystem
 {
 
     private Talon turretTalon = null;
-    private DigitalInput leftLimit, rightLimit;
+    public DigitalInput leftLimit, rightLimit;
     public Turret()
     {
         turretTalon = new Talon(RobotMap.TURRET_RING_TALONSR_ID);

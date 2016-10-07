@@ -100,6 +100,9 @@ public class Robot extends IterativeRobot
     public void teleopPeriodic()
     {
         SmartDashboard.putBoolean("Ball Detector: ",Robot.collector.ballSwitchTriggered());
+        SmartDashboard.putBoolean("Left Limit: ",Robot.turret.leftLimit.get());
+        SmartDashboard.putBoolean("Right Limit: ",Robot.turret.rightLimit.get());
+
         Scheduler.getInstance().run();
     }
 
