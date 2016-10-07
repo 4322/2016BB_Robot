@@ -26,7 +26,7 @@ public class Collector_Collect extends Command
     @Override
     protected boolean isFinished()
     {
-        return false;
+        return true;
     }
 
     @Override
