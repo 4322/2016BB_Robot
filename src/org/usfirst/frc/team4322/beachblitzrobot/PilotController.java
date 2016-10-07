@@ -45,19 +45,14 @@ public class PilotController
         return controller.rb;
     }
     
-    public Button getLowerButton()
+    public Button getChevalButton()
     {
         return controller.lt;
     }
     
-    public Button getChevalButton()
-    {
-        return controller.rt;
-    }
-    
     public Button getForwardButton()
     {
-        return controller.y;
+        return controller.b;
     }
     
     public Button getReverseButton()
