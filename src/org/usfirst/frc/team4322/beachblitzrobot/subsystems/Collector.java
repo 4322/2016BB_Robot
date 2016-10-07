@@ -4,6 +4,7 @@ import org.usfirst.frc.team4322.beachblitzrobot.Robot;
 import org.usfirst.frc.team4322.beachblitzrobot.RobotMap;
 import org.usfirst.frc.team4322.beachblitzrobot.commands.Collector_Raise;
 import org.usfirst.frc.team4322.beachblitzrobot.commands.Collector_Stop;
+import org.usfirst.frc.team4322.beachblitzrobot.commands.Feeder_StopFeeder;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
@@ -35,6 +36,8 @@ public class Collector extends Subsystem {
             Robot.driveBase.swapForward();
             Robot.collector.retractArm();
             Robot.collector.collectorStop();
+            Robot.feeder.set(0);
+            new Feeder_StopFeeder().start();
             new Collector_Stop().start();
         }
         
