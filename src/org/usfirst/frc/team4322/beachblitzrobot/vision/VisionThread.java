@@ -138,6 +138,11 @@ public class VisionThread extends Thread
                     vr.score = (vr.aspectScore + vr.areaScore) / 2;
                     vr.relxpos = vr.xpos / size.width;
                     vr.relypos = vr.ypos / size.height;
+                    if(vr.relypos > size.height/2)
+                    {
+                        RobotLogger.getInstance().log("Adding height bonus!\n" );
+                        vr.score += 10;
+                    }
                     vr.distance = 1.8/(20.0*((double)vr.bboxwidth/(double)size.width)*Math.tan((hFOV)*Math.PI/(180.0*2.0)));
                     if (Math.abs(vr.hu1 - targetHU1) < .2)
                     {
