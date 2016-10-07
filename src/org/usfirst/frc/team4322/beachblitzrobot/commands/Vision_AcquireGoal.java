@@ -52,11 +52,13 @@ public class Vision_AcquireGoal extends Command
         Robot.turret.set(out);
         if(Math.abs(vr.relxpos-.5)<RobotMap.TURRET_VISION_ALLOWED_ERR)
         {
-            lockincount++;
+            lockincount = RobotMap.TURRET_VISION_LOCKIN_COUNT;
+            Robot.acquisitionWasSuccessful = true;
         }
         else
         {
             lockincount = 0;
+            Robot.acquisitionWasSuccessful = false;
         }
     }
 
@@ -69,7 +71,7 @@ public class Vision_AcquireGoal extends Command
     @Override
     protected void end()
     {
-        Robot.acquisitionWasSuccessful = !isTimedOut();
+        
     }
 
     @Override
