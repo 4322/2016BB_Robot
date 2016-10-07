@@ -41,15 +41,15 @@ public class Vision_AcquireGoal extends Command
         double err = (vr.relxpos - .5); 
         double out = RobotMap.TURRET_VISION_P*err + prev*RobotMap.TURRET_VISION_D;
         prev = err;
-        if(err < RobotMap.TURRET_VISION_IZONE)
-        {
-            acc += err;
-            out += RobotMap.TURRET_VISION_I*acc;
-        }
-        else
-        {
-            acc = 0;
-        }
+//        if(err < RobotMap.TURRET_VISION_IZONE)
+//        {
+//            acc += err;
+//            out += RobotMap.TURRET_VISION_I*acc;
+//        }
+//        else
+//        {
+//            acc = 0;
+//        }
         Robot.turret.set(out);
         if(Math.abs(vr.relxpos-.5)<RobotMap.TURRET_VISION_ALLOWED_ERR)
         {
