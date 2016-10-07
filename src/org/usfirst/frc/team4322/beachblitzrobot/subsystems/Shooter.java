@@ -2,6 +2,7 @@ package org.usfirst.frc.team4322.beachblitzrobot.subsystems;
 
 import org.usfirst.frc.team4322.beachblitzrobot.RobotMap;
 import org.usfirst.frc.team4322.beachblitzrobot.commands.Feeder_StopFeeder;
+import org.usfirst.frc.team4322.beachblitzrobot.commands.Shooter_RunFlywheels;
 
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
@@ -62,6 +63,13 @@ public class Shooter extends Subsystem
     }
 
     
+    @Override
+    protected Command getDefaultCommand()
+    {
+        // TODO Auto-generated method stub
+        return new Shooter_RunFlywheels();
+    }
+
     public void initDefaultCommand()
     {
         // Set the default command for a subsystem here.
