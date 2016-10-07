@@ -13,7 +13,7 @@ public class Command_Delay extends Command
     long seconds = 0;
     public Command_Delay(double seconds)
     {
-        this.seconds = (long) (seconds*1000);
+        this.seconds = Math.round(seconds*1000);
         this.seconds /=20;
     }
     
