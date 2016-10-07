@@ -39,6 +39,7 @@ public class Command_Delay extends Command
     @Override
     protected void end()
     {
+        target = 0;
     }
 
     @Override
