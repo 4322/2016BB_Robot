@@ -11,6 +11,7 @@ public class Shooter_RunFlywheels extends Command
     public Shooter_RunFlywheels()
     {
         requires(Robot.shooter);
+        requires(Robot.feeder);
     }
     
     @Override
@@ -24,6 +25,7 @@ public class Shooter_RunFlywheels extends Command
     protected void execute()
     {
         Robot.shooter.set(RobotMap.SHOOTER_FLYWHEEL_RPM);
+        Robot.feeder.set(-1);
     }
 
     @Override
