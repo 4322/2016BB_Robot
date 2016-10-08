@@ -56,9 +56,6 @@ public class Robot extends IterativeRobot
         MapSynchronizer.getInstance().link(VisionThread.class);
         MapSynchronizer.getInstance().link(RobotLogger.class);
         MapSynchronizer.getInstance().link(this.getClass());
-        Command[] tmp ={new Command_Delay(15),new AutoGroup_CrossCheval(),new AutoGroup_CrossMoat(),new AutoGroup_CrossRamparts(),
-        		new AutoGroup_CrossRockWall(), new AutoGroup_CrossRoughTerrain()};
-        auto=tmp;
         collector = new Collector();
         driveBase = new DriveBase();
         feeder = new Feeder();
@@ -67,6 +64,9 @@ public class Robot extends IterativeRobot
         vision = new Vision();
         oi = new OI();
         new Compressor().setClosedLoopControl(true);
+        Command[] tmp ={new Command_Delay(15),new AutoGroup_CrossCheval(),new AutoGroup_CrossMoat(),new AutoGroup_CrossRamparts(),
+        		new AutoGroup_CrossRockWall(), new AutoGroup_CrossRoughTerrain()};
+        auto=tmp;
     }
 
     /**
