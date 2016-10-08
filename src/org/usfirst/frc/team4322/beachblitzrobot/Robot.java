@@ -32,8 +32,7 @@ public class Robot extends IterativeRobot
     public static Shooter shooter;
     public static Turret turret;
     public static Vision vision;
-    private static Command[] auto = {new Command_Delay(15),new AutoGroup_CrossCheval(),new AutoGroup_CrossMoat(),new AutoGroup_CrossRamparts(),
-    		new AutoGroup_CrossRockWall(), new AutoGroup_CrossRoughTerrain()};
+    private static Command auto[];
     public static enum AUTO_MODES {
     	NOTHING,
     	CHEVAL,
@@ -57,6 +56,9 @@ public class Robot extends IterativeRobot
         MapSynchronizer.getInstance().link(VisionThread.class);
         MapSynchronizer.getInstance().link(RobotLogger.class);
         MapSynchronizer.getInstance().link(this.getClass());
+        Command[] tmp ={new Command_Delay(15),new AutoGroup_CrossCheval(),new AutoGroup_CrossMoat(),new AutoGroup_CrossRamparts(),
+        		new AutoGroup_CrossRockWall(), new AutoGroup_CrossRoughTerrain()};
+        auto=tmp;
         collector = new Collector();
         driveBase = new DriveBase();
         feeder = new Feeder();
