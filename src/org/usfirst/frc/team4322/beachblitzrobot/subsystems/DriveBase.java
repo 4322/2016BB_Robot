@@ -56,7 +56,6 @@ public class DriveBase extends Subsystem
         talonFrontLeft.setFeedbackDevice(FeedbackDevice.QuadEncoder);
         talonFrontLeft.setEncPosition(0);
         talonFrontLeft.configEncoderCodesPerRev(RobotMap.ENCODER_TICKS_PER_REV);
-        robotDrive.setExpiration(.75);
         // Create instance of robotDrive
         robotDrive = new RobotDrive(talonFrontLeft,talonBackLeft,talonFrontRight,talonBackRight);
 
