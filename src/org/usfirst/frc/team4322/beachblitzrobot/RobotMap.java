@@ -62,7 +62,7 @@ public class RobotMap
     public static int SHOOTER_HOOD_PISTON_LEFT_SOLENOID_PORT = 5;
     public static int SHOOTER_HOOD_PISTON_RIGHT_SOLENOID_PORT = 4;
     @DashboardInputField(field="Shooter Speed: ")
-    public static double SHOOTER_FLYWHEEL_RPM = 0.95;
+    public static double SHOOTER_FLYWHEEL_RPM = 1;
     public static int SHOOTER_STABILIZATION_TIMEOUT = 1;
     public static int SHOOTER_STABLE_THRESHOLD = 5;
     
