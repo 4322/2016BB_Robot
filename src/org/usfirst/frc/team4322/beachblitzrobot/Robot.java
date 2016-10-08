@@ -3,13 +3,15 @@ package org.usfirst.frc.team4322.beachblitzrobot;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import org.usfirst.frc.team4322.beachblitzrobot.commands.AutoGroup_CrossCheval;
+import org.usfirst.frc.team4322.beachblitzrobot.commands.*;
 import org.usfirst.frc.team4322.beachblitzrobot.subsystems.*;
-import org.usfirst.frc.team4322.beachblitzrobot.vision.VisionThread;
+import org.usfirst.frc.team4322.beachblitzrobot.vision.*;
+import org.usfirst.frc.team4322.dashboard.DashboardInputField;
 import org.usfirst.frc.team4322.dashboard.MapSynchronizer;
 import org.usfirst.frc.team4322.logging.RobotLogger;
 
@@ -30,6 +32,18 @@ public class Robot extends IterativeRobot
     public static Shooter shooter;
     public static Turret turret;
     public static Vision vision;
+    private static Command[] auto = {new Command_Delay(15),new AutoGroup_CrossCheval(),new AutoGroup_CrossMoat(),new AutoGroup_CrossRamparts(),
+    		new AutoGroup_CrossRockWall(), new AutoGroup_CrossRoughTerrain()};
+    public static enum AUTO_MODES {
+    	NOTHING,
+    	CHEVAL,
+    	MOAT,
+    	RAMPARTS,
+    	ROCKWALL,
+    	ROUGH_TERRAIN
+    };
+    @DashboardInputField(field="Auto Mode:")
+    public static AUTO_MODES mode = AUTO_MODES.NOTHING;
     public static boolean acquisitionWasSuccessful = false;
 
     /**
@@ -42,6 +56,7 @@ public class Robot extends IterativeRobot
         MapSynchronizer.getInstance().link(RobotMap.class);
         MapSynchronizer.getInstance().link(VisionThread.class);
         MapSynchronizer.getInstance().link(RobotLogger.class);
+        MapSynchronizer.getInstance().link(this.getClass());
         collector = new Collector();
         driveBase = new DriveBase();
         feeder = new Feeder();
@@ -80,7 +95,7 @@ public class Robot extends IterativeRobot
      */
     public void autonomousInit()
     {
-        Scheduler.getInstance().add(new AutoGroup_CrossCheval());
+        Scheduler.getInstance().add(auto[mode.ordinal()]);
         vision.runThread();
     }
 
