@@ -27,6 +27,7 @@ public class Vision_AcquireGoal extends Command
     @Override
     protected void execute()
     {
+    	Robot.vision.getThread().setRateLimit(50);
         double err;
         VisionReport vr = Robot.vision.getVisionResults();
         if(vr == null)
@@ -80,6 +81,7 @@ public class Vision_AcquireGoal extends Command
     @Override
     protected void end()
     {
+    	Robot.vision.getThread().setRateLimit(125);
         done = false;
     }
 

@@ -45,7 +45,10 @@ public class DriveBase extends Subsystem
         talonBackLeft = new CANTalon(RobotMap.DRIVEBASE_BACK_LEFT_TALONSRX_ID);
         talonFrontRight = new CANTalon(RobotMap.DRIVEBASE_FRONT_RIGHT_TALONSRX_ID);
         talonBackRight = new CANTalon(RobotMap.DRIVEBASE_BACK_RIGHT_TALONSRX_ID);
-
+        talonFrontLeft.setVoltageRampRate(48);
+        talonBackLeft.setVoltageRampRate(48);
+        talonFrontRight.setVoltageRampRate(48);
+        talonBackRight.setVoltageRampRate(48);
         // Add encoder to talon config (tell the talon we are using an encoder plugged into it)
         talonFrontRight.setFeedbackDevice(FeedbackDevice.QuadEncoder);
         talonFrontRight.setEncPosition(0);

@@ -18,6 +18,7 @@ public class VisionThread extends Thread
     private boolean abort = false;
     private boolean queried = false;
     private VisionReport out = null;
+    private long rateLimit = 50;
     private static final double idealAspect = 20 / 12;
     ParticleFilterCriteria2 criteria[] = new ParticleFilterCriteria2[1];
     ParticleFilterOptions2 filterOptions = new ParticleFilterOptions2(0, 0, 1,
@@ -179,7 +180,7 @@ public class VisionThread extends Thread
                 CameraServer.getInstance().setImage(display);
                 RobotLogger.getInstance()
                         .log("========END OF SCORES========\n");
-                Thread.sleep(50);
+                Thread.sleep(rateLimit);
             } catch (Exception ex)
             {
                 RobotLogger.getInstance().exc("VisionThread.run()", ex);
@@ -189,6 +190,10 @@ public class VisionThread extends Thread
                 IMAQdxStopAcquisition(id);
             }
         }
+    }
+    public void setRateLimit(long r8)
+    {
+    	rateLimit = r8;
     }
 
 }

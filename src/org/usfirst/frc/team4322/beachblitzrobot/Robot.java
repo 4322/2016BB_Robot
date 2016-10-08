@@ -62,6 +62,7 @@ public class Robot extends IterativeRobot
         shooter = new Shooter();
         turret = new Turret();
         vision = new Vision();
+        vision.runThread();
         oi = new OI();
         new Compressor().setClosedLoopControl(true);
         Command[] tmp ={new Command_Delay(15),new AutoGroup_CrossCheval(),new AutoGroup_CrossMoat(),new AutoGroup_CrossRamparts(),
@@ -76,7 +77,7 @@ public class Robot extends IterativeRobot
      */
     public void disabledInit()
     {
-        vision.stopThread();
+        vision.getThread().setRateLimit(125);
     }
 
     public void disabledPeriodic()
@@ -98,7 +99,7 @@ public class Robot extends IterativeRobot
     public void autonomousInit()
     {
         Scheduler.getInstance().add(auto[mode.ordinal()]);
-        vision.runThread();
+        vision.getThread().setRateLimit(45);
     }
 
     /**
@@ -112,7 +113,7 @@ public class Robot extends IterativeRobot
     public void teleopInit()
     {
         Robot.driveBase.swapForward();
-        vision.runThread();
+        vision.getThread().setRateLimit(80);
     }
 
     /**

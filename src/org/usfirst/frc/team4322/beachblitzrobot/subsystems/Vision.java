@@ -8,6 +8,11 @@ public class Vision extends Subsystem
 {
     private VisionThread thread;
 
+    public VisionThread getThread()
+    {
+    	return thread;
+    }
+    
     public void runThread()
     {
         if (thread != null)
