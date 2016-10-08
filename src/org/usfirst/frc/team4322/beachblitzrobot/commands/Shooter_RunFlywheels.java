@@ -7,11 +7,15 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class Shooter_RunFlywheels extends Command
 {
-
+    public Shooter_RunFlywheels()
+    {
+        requires(Robot.shooter);
+    }
+    
     @Override
     protected void initialize()
     {
-        requires(Robot.shooter);
+
     }
     
     

@@ -8,5 +8,6 @@ public class Group_StopCollector extends CommandGroup
     {
         addSequential(new Collector_Stop());
         addSequential(new Collector_Raise());
+        addSequential(new Feeder_StopFeeder());
     }
 }
