@@ -44,7 +44,7 @@ public class Collector extends Subsystem {
         collectorPistons.set(Value.kReverse);
         ballSwitch = new DigitalInput(RobotMap.COLLECTOR_BALL_SWITCH_DIO_PORT);
         ballSwitch.requestInterrupts(new BallInterruptHandler());
-        Robot.collector.ballSwitch.enableInterrupts();
+        ballSwitch.enableInterrupts();
 
     }
 
