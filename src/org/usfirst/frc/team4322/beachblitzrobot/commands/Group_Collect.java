@@ -10,7 +10,7 @@ public class Group_Collect extends CommandGroup
         addParallel(new Feeder_Run());
         addParallel(new Collector_Collect());
         addSequential(new Command_WaitForInt());
-        addSequential(new DriveBase_SetOrientation(false)); 
+        addSequential(new DriveBase_SetOrientation(false));
         addSequential(new Feeder_StopFeeder());
         addSequential(new Collector_Stop());
         addSequential(new Collector_Raise());
