@@ -50,11 +50,6 @@ public class VisionThread extends Thread
 
     public VisionThread()
     {
-        if (id == -1)
-            id = IMAQdxOpenCamera("cam1",IMAQdxCameraControlMode.CameraControlModeController);
-        	criteria[0] = new ParticleFilterCriteria2(
-                MeasurementType.MT_AREA_BY_IMAGE_AREA, 0.25, 1.5, 0,
-                0);
     }
 
     private double ratioToScore(double ratio)
@@ -81,6 +76,12 @@ public class VisionThread extends Thread
     @Override
     public void run()
     {
+        if (id == -1)
+            id = IMAQdxOpenCamera("cam1",IMAQdxCameraControlMode.CameraControlModeController);
+        	criteria[0] = new ParticleFilterCriteria2(
+                MeasurementType.MT_AREA_BY_IMAGE_AREA, 0.25, 1.5, 0,
+                0);
+
         while (!abort)
         {
             try
