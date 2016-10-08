@@ -30,8 +30,8 @@ public class Collector extends Subsystem {
         @Override
         public void interruptFired(int interruptAssertedMask, Object param)
         {
-            Robot.collector.ballSwitch.requestInterrupts(this);;
-            Robot.collector.intenabled =false;
+            Robot.collector.ballSwitch.requestInterrupts(this);
+            Robot.collector.ballSwitch.enableInterrupts();
             Robot.feeder.set(0);
         }
         
@@ -62,11 +62,7 @@ public class Collector extends Subsystem {
     public void extendArm()
     {
         collectorPistons.set(Value.kForward);
-        if(!intenabled)
-        {
-            Robot.collector.ballSwitch.enableInterrupts();
-            intenabled=true;
-        }
+
     }
     
     public void retractArm()
