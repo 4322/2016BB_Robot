@@ -52,7 +52,6 @@ public class VisionThread extends Thread
     {
         if (id == -1)
             id = IMAQdxOpenCamera("cam1",IMAQdxCameraControlMode.CameraControlModeController);
-        	IMAQdxStartAcquisition(id);
         	criteria[0] = new ParticleFilterCriteria2(
                 MeasurementType.MT_AREA_BY_IMAGE_AREA, 0.25, 1.5, 0,
                 0);
@@ -86,9 +85,10 @@ public class VisionThread extends Thread
         {
             try
             {
-
+            	IMAQdxStartAcquisition(id);
                 IMAQdxGetImage(id, frame,
                         IMAQdxBufferNumberMode.BufferNumberModeNext, 0);
+                IMAQdxStopAcquisition(id);
                 GetImageSizeResult size = imaqGetImageSize(frame);
                 imaqColorThreshold(binarizedFrame, frame, 255, ColorMode.RGB,
                         new Range(rMin, rMax), new Range(gMin, gMax),
