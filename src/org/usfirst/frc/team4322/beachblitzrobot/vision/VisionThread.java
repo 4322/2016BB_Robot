@@ -2,6 +2,7 @@ package org.usfirst.frc.team4322.beachblitzrobot.vision;
 
 import java.util.ArrayList;
 
+import org.usfirst.frc.team4322.beachblitzrobot.Robot;
 import org.usfirst.frc.team4322.dashboard.DashboardInputField;
 import org.usfirst.frc.team4322.logging.RobotLogger;
 
@@ -184,8 +185,9 @@ public class VisionThread extends Thread
                 Thread.sleep(rateLimit);
             } catch (Exception ex)
             {
-                RobotLogger.getInstance().exc("VisionThread.run()", ex);
-
+                RobotLogger.getInstance().exc("VisionThread.run()", ex); 
+                NIVision.IMAQdxCloseCamera(id);
+                Robot.vision.runThread();
             } finally
             {
             }

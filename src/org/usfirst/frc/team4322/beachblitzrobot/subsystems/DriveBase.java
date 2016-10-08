@@ -58,7 +58,7 @@ public class DriveBase extends Subsystem
         talonFrontLeft.configEncoderCodesPerRev(RobotMap.ENCODER_TICKS_PER_REV);
         // Create instance of robotDrive
         robotDrive = new RobotDrive(talonFrontLeft,talonBackLeft,talonFrontRight,talonBackRight);
-
+        robotDrive.setExpiration(1.0);
         // Create NavX
         navx = new AHRS(SPI.Port.kMXP);
     }
