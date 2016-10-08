@@ -34,7 +34,7 @@ public class Vision_AcquireGoal extends Command
             if(lastReport != null)
             {
                 vr = lastReport;
-                err = (vr.relxpos - .5)/2;
+                err = (vr.relxpos - .5);
             }
             else
             {

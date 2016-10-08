@@ -41,13 +41,13 @@ public class RobotMap
      */
     public static int TURRET_RING_TALONSR_ID = 1;
     @DashboardInputField(field="Turret P: ")
-    public static double TURRET_VISION_P = 2.5;
+    public static double TURRET_VISION_P = 3.25;
     @DashboardInputField(field="Turret I: ")
-    public static double TURRET_VISION_I = .05;
+    public static double TURRET_VISION_I = .055;
     @DashboardInputField(field="Turret D: ")
     public static double TURRET_VISION_D = .25;
     @DashboardInputField(field="Turret IZone: ")
-    public static double TURRET_VISION_IZONE = .175;
+    public static double TURRET_VISION_IZONE = .225;
     @DashboardInputField(field="Vision Lockin Count: ")
     public static int TURRET_VISION_LOCKIN_COUNT = 10;
     @DashboardInputField(field="Vision Allowed Error: ")
@@ -62,7 +62,7 @@ public class RobotMap
     public static int SHOOTER_HOOD_PISTON_LEFT_SOLENOID_PORT = 5;
     public static int SHOOTER_HOOD_PISTON_RIGHT_SOLENOID_PORT = 4;
     @DashboardInputField(field="Shooter Speed: ")
-    public static double SHOOTER_FLYWHEEL_RPM = 1;
+    public static double SHOOTER_FLYWHEEL_RPM = 0.95;
     public static int SHOOTER_STABILIZATION_TIMEOUT = 1;
     public static int SHOOTER_STABLE_THRESHOLD = 5;
     
