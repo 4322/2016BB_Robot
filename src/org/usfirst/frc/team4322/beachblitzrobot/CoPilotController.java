@@ -52,4 +52,13 @@ public class CoPilotController
     {
         return controller.rt;
     }
+    
+    public Button getRevButton()
+    {
+        return controller.back;
+    }
+    public Button getManualShoot()
+    {
+        return controller.y;
+    }
 }

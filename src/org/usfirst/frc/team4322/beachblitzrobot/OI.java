@@ -23,5 +23,10 @@ public class OI
         CoPilotController.getInstance().getFireButton().whenPressed(new Feeder_LoadShooter());
         CoPilotController.getInstance().getFireButton().whenReleased(new Feeder_StopFeeder());
         CoPilotController.getInstance().getStopShooter().whenPressed(new Shooter_StopFlywheels());
+        CoPilotController.getInstance().getRevButton().whenPressed(new Group_ReverseTurret());
+        CoPilotController.getInstance().getRevButton().whenPressed(new Group_ReverseTurret());
+        CoPilotController.getInstance().getManualShoot().whenPressed(new Shooter_RunFlywheels());
+        CoPilotController.getInstance().getManualShoot().whenReleased(new Shooter_StopFlywheels());
+
     }
 }
