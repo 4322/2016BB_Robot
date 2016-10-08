@@ -87,7 +87,7 @@ public class DriveBase extends Subsystem
 
     public double getEncoderDistance()
     {
-        return (talonFrontLeft.getPosition() + talonFrontRight.getPosition()) /2;
+        return (talonFrontLeft.getPosition()) ;
     }
 
     public void resetNavxYaw()
