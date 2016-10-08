@@ -87,7 +87,7 @@ public class VisionThread extends Thread
             {
             	IMAQdxStartAcquisition(id);
                 IMAQdxGetImage(id, frame,
-                        IMAQdxBufferNumberMode.BufferNumberModeNext, 0);
+                        IMAQdxBufferNumberMode.BufferNumberModeBufferNumber, 0);
                 IMAQdxStopAcquisition(id);
                 GetImageSizeResult size = imaqGetImageSize(frame);
                 imaqColorThreshold(binarizedFrame, frame, 255, ColorMode.RGB,
