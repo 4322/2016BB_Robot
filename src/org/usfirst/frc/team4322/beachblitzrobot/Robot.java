@@ -112,7 +112,7 @@ public class Robot extends IterativeRobot
 
     public void teleopInit()
     {
-        Robot.driveBase.swapForward();
+//        Robot.driveBase.swapForward();
     }
 
     /**
