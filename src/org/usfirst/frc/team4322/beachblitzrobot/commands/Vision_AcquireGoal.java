@@ -48,7 +48,7 @@ public class Vision_AcquireGoal extends Command
             lastReport = vr;
         }
           
-
+        
         double out = RobotMap.TURRET_VISION_P*err + prev*RobotMap.TURRET_VISION_D;
         prev = err;
         if(Math.abs(err) < RobotMap.TURRET_VISION_IZONE)
@@ -60,6 +60,7 @@ public class Vision_AcquireGoal extends Command
         {
             acc = 0;
         }
+        out+=Math.copySign(0.04, err);
         Robot.turret.set(out);
         if(Math.abs(vr.relxpos-.5)<RobotMap.TURRET_VISION_ALLOWED_ERR)
         {
@@ -83,6 +84,8 @@ public class Vision_AcquireGoal extends Command
     {
     	Robot.vision.getThread().setRateLimit(125);
         done = false;
+        lastReport=null;
+        prev=0;
     }
 
     @Override

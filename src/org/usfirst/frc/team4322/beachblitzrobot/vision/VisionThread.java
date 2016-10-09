@@ -121,7 +121,7 @@ public class VisionThread extends Thread
                             MeasurementType.MT_CENTER_OF_MASS_Y);
                     vr.boundingBoxArea = vr.bboxheight * vr.bboxwidth;
                     vr.areaScore = ratioToScore(
-                            (vr.area / (vr.boundingBoxArea)) * 3);
+                            (vr.area / (vr.boundingBoxArea)) * 3.0);
 
                     vr.aspect = ((double) vr.bboxwidth / vr.bboxheight);
                     vr.aspectScore = ratioToScore(
@@ -129,7 +129,7 @@ public class VisionThread extends Thread
                     vr.score = (vr.aspectScore + vr.areaScore) / 2;
                     vr.relxpos = vr.xpos / size.width;
                     vr.relypos = vr.ypos / size.height;
-                    if(vr.ypos < size.height/2.5)
+                    if(vr.ypos < size.height*.7)
                     {
                         vr.score += 10;
                     }
