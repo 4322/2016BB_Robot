@@ -64,4 +64,14 @@ public class PilotController
     {
         return controller.b;
     }
+    
+    public Button getLimitDownButton()
+    {
+    	return controller.y;
+    }
+    
+    public Button getLimitUpButton()
+    {
+    	return controller.x;
+    }
 }

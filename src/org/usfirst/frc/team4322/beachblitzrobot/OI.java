@@ -17,6 +17,8 @@ public class OI
         PilotController.getInstance().getLowGoalButton().whenReleased(new Feeder_StopFeeder());
         PilotController.getInstance().getForwardButton().whenPressed(new DriveBase_SetOrientation(true));
         PilotController.getInstance().getReverseButton().whenPressed(new DriveBase_SetOrientation(false));
+        PilotController.getInstance().getLimitDownButton().whenPressed(new DriveBase_SetPowerLimit(.75));
+        PilotController.getInstance().getLimitUpButton().whenPressed(new DriveBase_SetPowerLimit(1.0));
         CoPilotController.getInstance().getShootButton().whileHeld(new Group_Shoot());
         CoPilotController.getInstance().getHoodDownButton().whenPressed(new Shooter_LowerHood());        
         CoPilotController.getInstance().getHoodUpButton().whenPressed(new Shooter_RaiseHood());

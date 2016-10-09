@@ -9,7 +9,6 @@ import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
 import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.RobotDrive.MotorType;
 import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -27,6 +26,7 @@ public class DriveBase extends Subsystem
     private RobotDrive robotDrive;
     private AHRS navx;
     private float resetYaw = 0;
+    private double powerLim = 1; 
     private boolean reversed = false;
     
     public void swapForward()
@@ -61,7 +61,7 @@ public class DriveBase extends Subsystem
     
     public void drive(double moveValue, double rotateValue)
     {
-        drive(moveValue, rotateValue, 1,.8);
+        drive(moveValue, rotateValue, powerLim,.8*powerLim);
     }
     
     public void drive(double moveValue, double rotateValue, double powerLimit,double steerLimit)
@@ -120,5 +120,10 @@ public class DriveBase extends Subsystem
     public boolean isReversed()
     {
         return reversed;
+    }
+    
+    public void setPowerLimit(double pl)
+    {
+    	powerLim = pl;
     }
 }
