@@ -32,10 +32,6 @@ public class DriveBase extends Subsystem
     public void swapForward()
     {
         reversed = !reversed;
-        robotDrive.setInvertedMotor(MotorType.kFrontLeft, reversed);
-        robotDrive.setInvertedMotor(MotorType.kFrontRight, reversed);
-        robotDrive.setInvertedMotor(MotorType.kRearLeft, reversed);
-        robotDrive.setInvertedMotor(MotorType.kRearRight, reversed);
     }
     
     public DriveBase()
@@ -65,15 +61,15 @@ public class DriveBase extends Subsystem
     
     public void drive(double moveValue, double rotateValue)
     {
-        drive(moveValue, rotateValue, 1);
+        drive(moveValue, rotateValue, 1,.8);
     }
     
-    public void drive(double moveValue, double rotateValue, double powerLimit)
+    public void drive(double moveValue, double rotateValue, double powerLimit,double steerLimit)
     {
         if(reversed)
-            robotDrive.arcadeDrive(moveValue * powerLimit, rotateValue * powerLimit);
+            robotDrive.arcadeDrive(-moveValue * powerLimit, rotateValue * steerLimit);
         else
-            robotDrive.arcadeDrive(moveValue * powerLimit, -rotateValue * powerLimit);
+            robotDrive.arcadeDrive(moveValue * powerLimit, -rotateValue * steerLimit);
 
     }
 

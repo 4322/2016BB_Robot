@@ -66,7 +66,7 @@ public class Vision_AcquireGoal extends Command
         {
         	if(Robot.acquisitionWasSuccessful)
                 done = true;
-        	Robot.acquisitionWasSuccessful = true;
+        	Robot.acquisitionWasSuccessful = true; 
         }
         else
         {
