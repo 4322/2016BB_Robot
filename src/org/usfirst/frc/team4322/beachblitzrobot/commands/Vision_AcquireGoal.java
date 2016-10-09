@@ -64,8 +64,9 @@ public class Vision_AcquireGoal extends Command
         Robot.turret.set(out);
         if(Math.abs(vr.relxpos-.5)<RobotMap.TURRET_VISION_ALLOWED_ERR)
         {
-            Robot.acquisitionWasSuccessful = true;
-            done = true;
+        	if(Robot.acquisitionWasSuccessful)
+                done = true;
+        	Robot.acquisitionWasSuccessful = true;
         }
         else
         {
