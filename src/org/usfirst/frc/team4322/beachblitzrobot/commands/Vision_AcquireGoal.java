@@ -44,7 +44,7 @@ public class Vision_AcquireGoal extends Command
         }
         else
         {
-            err = (vr.relxpos - .5);
+            err = (vr.relxpos - .5)*.75;
             lastReport = vr;
         }
           
