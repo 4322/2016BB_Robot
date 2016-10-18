@@ -126,6 +126,8 @@ public class Robot extends IterativeRobot
         SmartDashboard.putBoolean("Left Limit: ",Robot.turret.leftLimit.get());
         SmartDashboard.putBoolean("Right Limit: ",Robot.turret.rightLimit.get());
         SmartDashboard.putNumber("Encoder: ",Robot.driveBase.getEncoderDistance());
+        SmartDashboard.putData("Disable El Drivo", new DriveBase_DisableDrive());
+        SmartDashboard.putData("Enable Drive", new DriveBase_EnableDrive());
         Scheduler.getInstance().run();
     }
 

@@ -28,6 +28,8 @@ public class OI
         CoPilotController.getInstance().getRevButton().whenPressed(new Group_ReverseTurret());
         CoPilotController.getInstance().getRevButton().whenPressed(new Group_ReverseTurret());
         CoPilotController.getInstance().getManualShoot().whileHeld(new Shooter_RunFlywheels());
+        DemoController.getInstance().getReadyButton().whileHeld(new Shooter_RunFlywheels());
+        DemoController.getInstance().getShootButton().whenPressed(new Shooter_Eject());
 
     }
 }
