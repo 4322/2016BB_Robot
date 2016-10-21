@@ -113,6 +113,7 @@ public class Robot extends IterativeRobot
     public void teleopInit()
     {
 //        Robot.driveBase.swapForward();
+    	Command demo = new Turret_ManualMove();
     }
 
     /**
@@ -121,7 +122,6 @@ public class Robot extends IterativeRobot
     public void teleopPeriodic()
     {
         vision.getThread().setRateLimit(90);
-
         SmartDashboard.putBoolean("Ball Detector: ",Robot.collector.ballSwitchTriggered());
         SmartDashboard.putBoolean("Left Limit: ",Robot.turret.leftLimit.get());
         SmartDashboard.putBoolean("Right Limit: ",Robot.turret.rightLimit.get());

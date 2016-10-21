@@ -1,7 +1,6 @@
 package org.usfirst.frc.team4322.beachblitzrobot.commands;
 
-import org.usfirst.frc.team4322.beachblitzrobot.CoPilotController;
-import org.usfirst.frc.team4322.beachblitzrobot.DemoController;
+import org.usfirst.frc.team4322.beachblitzrobot.Controller;
 import org.usfirst.frc.team4322.beachblitzrobot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -18,8 +17,8 @@ public class Turret_ManualMove extends Command
     @Override
     protected void execute()
     {
-        Robot.turret.set(CoPilotController.getInstance().getTurretRotation());
-        Robot.turret.set(DemoController.getInstance().getTurretRotation());
+        Robot.turret.set(Controller.getInstance().getTurret());
+       
     }
 
     @Override
