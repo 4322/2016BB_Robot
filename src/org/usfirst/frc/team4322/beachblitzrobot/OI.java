@@ -11,6 +11,7 @@ public class OI
     {
     	Controller.getInstance().getShoot().whenPressed(new Feeder_Run());
     	Controller.getInstance().getReady().whileHeld(new Shooter_RunFlywheels());
+    	Controller.getInstance().stopFeed().whenPressed(new Feeder_StopFeeder());
     	Controller.getInstance().getHoodUp().whenPressed(new Shooter_RaiseHood());
     	Controller.getInstance().getHoodDown().whenPressed(new Shooter_LowerHood());
     	Controller.getInstance().getFeed().whileHeld(new Feeder_Run());
