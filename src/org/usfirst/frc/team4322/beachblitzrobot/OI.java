@@ -13,6 +13,6 @@ public class OI
     	Controller.getInstance().getReady().whileHeld(new Shooter_RunFlywheels());
     	Controller.getInstance().getHoodUp().whenPressed(new Shooter_RaiseHood());
     	Controller.getInstance().getHoodDown().whenPressed(new Shooter_LowerHood());
-//    	Controller.getInstance().getFeed().whileHeld(new Feeder_Run());
+    	Controller.getInstance().getFeed().whileHeld(new Feeder_Run());
     }
 }
