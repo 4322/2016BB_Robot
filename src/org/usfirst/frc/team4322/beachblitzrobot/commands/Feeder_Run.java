@@ -9,7 +9,7 @@ public class Feeder_Run extends Command
     public Feeder_Run()
     {
         requires(Robot.feeder);
-//        setTimeout(5);
+        setTimeout(5);
     }
 
     @Override
@@ -27,7 +27,7 @@ public class Feeder_Run extends Command
     @Override
     protected boolean isFinished()
     {
-        return true;
+        return isTimedOut();
     }
 
     @Override
