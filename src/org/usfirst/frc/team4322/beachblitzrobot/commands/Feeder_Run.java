@@ -9,7 +9,7 @@ public class Feeder_Run extends Command
     public Feeder_Run()
     {
         requires(Robot.feeder);
-        setTimeout(5);
+//        setTimeout(5);
     }
 
     @Override
