@@ -27,7 +27,7 @@ public class Feeder_Run extends Command
     @Override
     protected boolean isFinished()
     {
-        return isTimedOut();
+        return true;
     }
 
     @Override
