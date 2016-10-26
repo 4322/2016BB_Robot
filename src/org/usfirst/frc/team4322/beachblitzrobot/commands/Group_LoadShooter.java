@@ -9,7 +9,7 @@ public class Group_LoadShooter extends CommandGroup
     {
 //        addSequential(new Command_Delay(2));
         addParallel(new Feeder_LoadShooter());
-        addSequential(new Command_Delay(1));
+        addSequential(new Command_Delay(0.2));
         addSequential(new Feeder_StopFeeder());
 //        addSequential(new Shooter_StopFlywheels());
         
