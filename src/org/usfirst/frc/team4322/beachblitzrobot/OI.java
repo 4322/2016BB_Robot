@@ -9,8 +9,7 @@ public class OI
 {
     public OI()
     {
-    	Controller.getInstance().getShoot().whenPressed(new Group_LoadShooter());
-    	Controller.getInstance().getReady().whileHeld(new Shooter_RunFlywheels());
+    	Controller.getInstance().getShoot().whenPressed(new Group_ShootDemo());
     	Controller.getInstance().stopFeed().whenPressed(new Feeder_StopFeeder());
     	Controller.getInstance().getHoodUp().whenPressed(new Shooter_RaiseHood());
     	Controller.getInstance().getHoodDown().whenPressed(new Shooter_LowerHood());

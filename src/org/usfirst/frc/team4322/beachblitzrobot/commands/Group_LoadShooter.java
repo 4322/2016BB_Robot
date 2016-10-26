@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4322.beachblitzrobot.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import org.usfirst.frc.team4322.beachblitzrobot.commands.Shooter_RunFlywheels;
 
 public class Group_LoadShooter extends CommandGroup
 {
@@ -11,6 +12,6 @@ public class Group_LoadShooter extends CommandGroup
         addSequential(new Command_Delay(1));
         addSequential(new Feeder_StopFeeder());
 //        addSequential(new Shooter_StopFlywheels());
-
+        
     }
 }
