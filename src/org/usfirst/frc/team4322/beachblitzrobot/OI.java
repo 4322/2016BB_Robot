@@ -14,5 +14,8 @@ public class OI
     	Controller.getInstance().getHoodUp().whenPressed(new Shooter_RaiseHood());
     	Controller.getInstance().getHoodDown().whenPressed(new Shooter_LowerHood());
     	Controller.getInstance().getFeed().whenPressed(new Group_Collect());
+    	Controller.getInstance().getEject().whenPressed(new Group_Eject());
+    	Controller.getInstance().getSpeedUp().whenPressed(new Shooter_SpeedUP());
+    	Controller.getInstance().getSpeedDown().whenPressed(new Shooter_SpeedDown());
     }
 }

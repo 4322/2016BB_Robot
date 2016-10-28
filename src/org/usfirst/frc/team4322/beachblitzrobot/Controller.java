@@ -52,4 +52,12 @@ public class Controller extends Joystick {
 	{
 		return new JoystickButton(this,7);
 	}
+	public Button getSpeedUp()
+	{
+		return new JoystickButton(this,8);
+	}
+	public Button getSpeedDown()
+	{
+		return new JoystickButton(this,9);
+	}
 }
