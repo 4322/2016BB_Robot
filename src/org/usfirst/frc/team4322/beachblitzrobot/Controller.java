@@ -1,16 +1,14 @@
 package org.usfirst.frc.team4322.beachblitzrobot;
 
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import org.usfirst.frc.team4322.input.XboxController;
 
-public class Controller extends Joystick {
+import edu.wpi.first.wpilibj.buttons.Button;
+
+
+public class Controller {
 	
-	private static Controller _instance;
-	private Controller()
-	{
-		super(0);
-	}
+	private static Controller _instance = null;
+	private XboxController controller = null;
 	
 	public static Controller getInstance()
 	{
@@ -22,42 +20,38 @@ public class Controller extends Joystick {
 	}
 	public Button getShoot() 
 	{
-		return new JoystickButton(this,1);
-	}
-	public Button getReady()
-	{
-		return new JoystickButton(this,2);
+		return controller.rt;
 	}
 	public Button getHoodUp()
 	{
-		return new JoystickButton(this,3);
+		return controller.dPad.up;
 	}
 	public Button getHoodDown()
 	{
-		return new JoystickButton(this,2);
+		return controller.dPad.down;
 	}
 	public Button getFeed()
 	{
-		return new JoystickButton(this,4);
+		return controller.a;
 	}
 	public Button stopFeed()
 	{
-		return new JoystickButton(this,6);
+		return controller.x;
 	}
 	public double getTurret()
 	{
-		return this.getX();
+		return controller.getX();
 	}
 	public Button getEject()
 	{
-		return new JoystickButton(this,7);
+		return controller.y;
 	}
 	public Button getSpeedUp()
 	{
-		return new JoystickButton(this,8);
+		return controller.rb;
 	}
 	public Button getSpeedDown()
 	{
-		return new JoystickButton(this,9);
+		return controller.lb;
 	}
 }
