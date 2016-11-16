@@ -17,6 +17,7 @@ public class RobotMap
     public static String LAST_BUILD_TIME;
     public static String COMMIT_SHORTHASH;
 
+    public static int MAIN = 0;
     /**
      * DriveBase
      */

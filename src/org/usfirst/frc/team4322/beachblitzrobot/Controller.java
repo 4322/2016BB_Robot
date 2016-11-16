@@ -15,6 +15,7 @@ public class Controller {
 		if(_instance == null)
 		{
 			_instance = new Controller();
+			_instance.controller = new XboxController(RobotMap.MAIN);
 		}
 		return _instance; 
 	}
