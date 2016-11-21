@@ -128,6 +128,7 @@ public class Robot extends IterativeRobot
         SmartDashboard.putNumber("Encoder: ",Robot.driveBase.getEncoderDistance());
         SmartDashboard.putData("Disable El Drivo", new DriveBase_DisableDrive());
         SmartDashboard.putData("Enable Drive", new DriveBase_EnableDrive());
+        SmartDashboard.putBoolean("Optical Sensor", shooter.getInput());
         Scheduler.getInstance().run();
     }
 

@@ -66,6 +66,8 @@ public class RobotMap
     public static double SHOOTER_FLYWHEEL_RPM = .75;
     public static int SHOOTER_STABILIZATION_TIMEOUT = 1;
     public static int SHOOTER_STABLE_THRESHOLD = 5;
+    public static int SHOOTER_FLYWHEEL_SENSOR = 4;
+    
     
     /**
      * Feeder
