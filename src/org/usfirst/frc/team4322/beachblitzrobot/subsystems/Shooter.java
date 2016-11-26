@@ -26,26 +26,34 @@ public class Shooter extends Subsystem
     private CANTalon flywheelRightTalon;
     private DoubleSolenoid hoodSolenoid;
     private DigitalInput flywheelSensor;
-    private Counter flywheelRPMCount = new Counter();
+    private Counter flywheelRPMCount;
 
     private int allowedErr = 0;
 
     public Shooter()
     {
-        flywheelLeftTalon = new CANTalon(
-                RobotMap.SHOOTER_FLYWHEEL_LEFT_TALONSRX_ID);
-        flywheelLeftTalon.changeControlMode(TalonControlMode.PercentVbus);
-        flywheelLeftTalon.enableBrakeMode(false);;
-        flywheelRightTalon = new CANTalon(
-                RobotMap.SHOOTER_FLYWHEEL_RIGHT_TALONSRX_ID);
-        flywheelRightTalon.changeControlMode(TalonControlMode.Follower);
-        flywheelRightTalon.enableBrakeMode(false);
-        flywheelRightTalon.set(RobotMap.SHOOTER_FLYWHEEL_LEFT_TALONSRX_ID);
-        flywheelSensor = new DigitalInput(RobotMap.SHOOTER_FLYWHEEL_SENSOR);
-        hoodSolenoid = new DoubleSolenoid(RobotMap.SHOOTER_HOOD_PISTON_LEFT_SOLENOID_PORT,RobotMap.SHOOTER_HOOD_PISTON_RIGHT_SOLENOID_PORT);
-        hoodSolenoid.set(Value.kReverse);
-        flywheelRPMCount.setUpSource(RobotMap.SHOOTER_FLYWHEEL_SENSOR);
-        flywheelRPMCount.setUpDownCounterMode();
+    	try
+    	{
+	        flywheelLeftTalon = new CANTalon(
+	                RobotMap.SHOOTER_FLYWHEEL_LEFT_TALONSRX_ID);
+	        flywheelLeftTalon.changeControlMode(TalonControlMode.PercentVbus);
+	        flywheelLeftTalon.enableBrakeMode(false);;
+	        flywheelRightTalon = new CANTalon(
+	                RobotMap.SHOOTER_FLYWHEEL_RIGHT_TALONSRX_ID);
+	        flywheelRightTalon.changeControlMode(TalonControlMode.Follower);
+	        flywheelRightTalon.enableBrakeMode(false);
+	        flywheelRightTalon.set(RobotMap.SHOOTER_FLYWHEEL_LEFT_TALONSRX_ID);
+	        flywheelSensor = new DigitalInput(RobotMap.SHOOTER_FLYWHEEL_SENSOR);
+	        hoodSolenoid = new DoubleSolenoid(RobotMap.SHOOTER_HOOD_PISTON_LEFT_SOLENOID_PORT,RobotMap.SHOOTER_HOOD_PISTON_RIGHT_SOLENOID_PORT);
+	        hoodSolenoid.set(Value.kReverse);
+	        flywheelRPMCount = new Counter();
+	        flywheelRPMCount.setUpSource(RobotMap.SHOOTER_FLYWHEEL_SENSOR);
+	        flywheelRPMCount.setUpDownCounterMode();
+    	}
+    	catch(Exception ex)
+    	{
+    		System.out.println("Shooter Constructor exception: " + ex);
+    	}
         
     }
 
