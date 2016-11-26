@@ -44,7 +44,7 @@ public class Shooter extends Subsystem
         flywheelSensor = new DigitalInput(RobotMap.SHOOTER_FLYWHEEL_SENSOR);
         hoodSolenoid = new DoubleSolenoid(RobotMap.SHOOTER_HOOD_PISTON_LEFT_SOLENOID_PORT,RobotMap.SHOOTER_HOOD_PISTON_RIGHT_SOLENOID_PORT);
         hoodSolenoid.set(Value.kReverse);
-//        flywheelRPMCount = new Counter();
+        flywheelRPMCount = new Counter(RobotMap.SHOOTER_FLYWHEEL_SENSOR);
 //        flywheelRPMCount.setUpSource(RobotMap.SHOOTER_FLYWHEEL_SENSOR);
 //        flywheelRPMCount.setUpDownCounterMode();
         
