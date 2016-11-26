@@ -44,9 +44,9 @@ public class Shooter extends Subsystem
         flywheelSensor = new DigitalInput(RobotMap.SHOOTER_FLYWHEEL_SENSOR);
         hoodSolenoid = new DoubleSolenoid(RobotMap.SHOOTER_HOOD_PISTON_LEFT_SOLENOID_PORT,RobotMap.SHOOTER_HOOD_PISTON_RIGHT_SOLENOID_PORT);
         hoodSolenoid.set(Value.kReverse);
-        flywheelRPMCount = new Counter();
-        flywheelRPMCount.setUpSource(RobotMap.SHOOTER_FLYWHEEL_SENSOR);
-        flywheelRPMCount.setUpDownCounterMode();
+//        flywheelRPMCount = new Counter();
+//        flywheelRPMCount.setUpSource(RobotMap.SHOOTER_FLYWHEEL_SENSOR);
+//        flywheelRPMCount.setUpDownCounterMode();
         
     }
 
@@ -58,10 +58,10 @@ public class Shooter extends Subsystem
     {
     	return flywheelSensor.get();
     }
-    public int getPulse()
-    {
-    	return flywheelRPMCount.get();
-    }
+//    public int getPulse()
+//    {
+//    	return flywheelRPMCount.get();
+//    }
     public void setTolerance(int allowedErr)
     {
         this.allowedErr = allowedErr;

@@ -129,7 +129,7 @@ public class Robot extends IterativeRobot
         SmartDashboard.putData("Disable El Drivo", new DriveBase_DisableDrive());
         SmartDashboard.putData("Enable Drive", new DriveBase_EnableDrive());
         SmartDashboard.putBoolean("Optical Sensor", Robot.shooter.getInput());
-        SmartDashboard.putNumber("Counter Value", Robot.shooter.getPulse());
+//        SmartDashboard.putNumber("Counter Value", Robot.shooter.getPulse());
         Scheduler.getInstance().run();
     }
 
