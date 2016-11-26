@@ -8,6 +8,7 @@ import org.usfirst.frc.team4322.beachblitzrobot.commands.Shooter_StopFlywheels;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.FeedbackDevice;
 import edu.wpi.first.wpilibj.CANTalon.TalonControlMode;
+import edu.wpi.first.wpilibj.Counter;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
@@ -25,6 +26,7 @@ public class Shooter extends Subsystem
     private CANTalon flywheelRightTalon;
     private DoubleSolenoid hoodSolenoid;
     private DigitalInput flywheelSensor;
+    private Counter flywheelRPMCount;
 
     private int allowedErr = 0;
 
@@ -42,6 +44,8 @@ public class Shooter extends Subsystem
         flywheelSensor = new DigitalInput(RobotMap.SHOOTER_FLYWHEEL_SENSOR);
         hoodSolenoid = new DoubleSolenoid(RobotMap.SHOOTER_HOOD_PISTON_LEFT_SOLENOID_PORT,RobotMap.SHOOTER_HOOD_PISTON_RIGHT_SOLENOID_PORT);
         hoodSolenoid.set(Value.kReverse);
+        flywheelRPMCount = new Counter(RobotMap.SHOOTER_FLYWHEEL_SENSOR);
+        flywheelRPMCount.setSemiPeriodMode(true);
     }
 
     public void set(double rpm)
@@ -52,7 +56,10 @@ public class Shooter extends Subsystem
     {
     	return flywheelSensor.get();
     }
-
+    public double getPulse()
+    {
+    	return flywheelRPMCount.getPeriod();
+    }
     public void setTolerance(int allowedErr)
     {
         this.allowedErr = allowedErr;
